@@ -1,0 +1,4 @@
+# Entrypoint-specific override; the desktop configuration remains on loopback.
+[server]
+address = "0.0.0.0"
+headless = true

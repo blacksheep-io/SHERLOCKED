@@ -62,6 +62,10 @@ Optional local path overrides use `configs/paths.json`, copied from [configs/pat
 
 The main 90-report corpus and separate 39-report challenge have distinct relevance labels. User submissions do not become benchmark labels. Local SQLite stores, model weights, environments, caches, backups, logs, exports and personal settings are excluded from version control. Preserve edited reports and historical experiments; do not replace them with regenerated data.
 
+## Private hosted demonstration
+
+An isolated [Streamlit Community Cloud profile](docs/STREAMLIT_DEPLOYMENT.md) uses `deploy/streamlit/app.py`, Python 3.12 and CPU-only PyTorch. Keep the deployment private to trusted viewers: the application shares its reports and settings, and generated cloud files have no persistence guarantee. The desktop setup and offline defaults remain unchanged.
+
 ## Development checks
 
 After setup, from the repository root:
@@ -82,6 +86,6 @@ Semantic checks require the configured model assets. The [distribution guide](do
 - [Development guide](DEVELOPMENT_GUIDE.md) and [limitations and ethics](LIMITATIONS_AND_ETHICS.md)
 - [Entry/theme notes](docs/ENTRY_AND_THEMES.md), [dated verification](docs/ENTRY_VERIFICATION.md) and [historical local-release README](README.local.md)
 
-The datasets are small and synthetic; extraction uses heuristics, negation/coreference remain limited, and similarity is not a calibrated relationship probability. Similarity does not determine guilt, verify identity or confirm a real connection. Keep this research tool on loopback and do not enter real sensitive reports.
+The datasets are small and synthetic; extraction uses heuristics, negation/coreference remain limited, and similarity is not a calibrated relationship probability. Similarity does not determine guilt, verify identity or confirm a real connection. Keep the desktop application on loopback, restrict a hosted demonstration to trusted viewers, and do not enter real sensitive reports.
 
 Test counts, screenshots, archive names and acceptance statements in the imported documents describe their dated local checkpoints. They do not establish a new test run, fresh-machine verification or a downloadable GitHub release. Earlier screenshots showing an interactive public preview are historical; report analysis belongs inside the signed-in workspace.

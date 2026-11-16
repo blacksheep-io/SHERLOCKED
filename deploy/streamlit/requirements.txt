@@ -1,0 +1,5 @@
+# Community Cloud Linux / Python 3.12 profile. Keep desktop requirements intact.
+--extra-index-url https://download.pytorch.org/whl/cpu
+-r ../../requirements.txt
+# The local version also satisfies the root torch==2.6.0 requirement.
+torch==2.6.0+cpu
