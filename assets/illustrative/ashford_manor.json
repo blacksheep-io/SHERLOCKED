@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "workspace_id": "ashford-manor-illustrative",
+  "title": "Ashford Manor",
+  "subtitle": "The missing archive folio",
+  "created_on": "2026-11-05",
+  "provenance": "Newly authored fictional presentation study created 5 November 2026. Not recovered evidence, an existing case file, independently reviewed data or research ground truth.",
+  "research_ground_truth": false,
+  "timeline_note": "All times are authored narrative observations on 31 October 2026, UTC+06:00. Sequence does not establish causation or identify a person.",
+  "reports": [
+    {
+      "report_id": "AM-001", "language": "en", "fictional": true,
+      "source_id": "illustrative:ashford-manor:AM-001", "occurred_at": "2026-10-31T20:10:00+06:00",
+      "location": "Archive room", "incident_type": "missing_property", "title": "Archive inventory note",
+      "text": "At 2026-10-31T20:10:00+06:00, the archivist checked the west archive drawer and could not locate the blue-ribbon folio. An inventory entry from earlier that evening lists the folio, but the note does not establish when it was removed. Object: archive folio; Location: Archive room. No person was identified as having moved it."
+    },
+    {
+      "report_id": "AM-002", "language": "bn", "fictional": true,
+      "source_id": "illustrative:ashford-manor:AM-002", "occurred_at": "2026-10-31T20:04:00+06:00",
+      "location": "North passage", "title": "উত্তর বারান্দার পর্যবেক্ষণ",
+      "text": "2026-10-31T20:04:00+06:00 সময়ে উত্তর বারান্দায় একটি নীল ফিতের ফোল্ডার রাখা ছিল বলে কাল্পনিক পাঠাগার সহকারী লিখেছেন। এটি আর্কাইভের হারানো নথি কি না তিনি জানেন না। পাশে একটি লণ্ঠন ছিল। বস্তু: নীল ফিতের ফোল্ডার; স্থান: North passage। কারও পরিচয় নিশ্চিত করা হয়নি।"
+    },
+    {
+      "report_id": "AM-003", "language": "mixed", "fictional": true,
+      "source_id": "illustrative:ashford-manor:AM-003", "occurred_at": "2026-10-31T20:07:00+06:00",
+      "location": "North passage", "title": "Passage light interruption",
+      "text": "At 2026-10-31T20:07:00+06:00, north passage er lantern kichukhon nibhe gechilo. A book trolley stood near the study door. Report e blue ribbon dekhar kotha nei, folio o identify kora hoyni. Vehicle: book trolley; Location: North passage. অন্ধকারের কারণে পর্যবেক্ষণ অসম্পূর্ণ ছিল।"
+    },
+    {
+      "report_id": "AM-004", "language": "en", "fictional": true,
+      "source_id": "illustrative:ashford-manor:AM-004", "occurred_at": "2026-10-31T20:12:00+06:00",
+      "location": "East courtyard", "incident_type": "maintenance", "title": "Courtyard lantern service",
+      "text": "At 2026-10-31T20:12:00+06:00, a groundskeeper replaced the wick of the east courtyard lantern. This is a maintenance record. The writer recorded no archive visit and no folio. Object: lantern; Location: East courtyard. Shared lantern wording alone would not connect this task to the missing document."
+    },
+    {
+      "report_id": "AM-005", "language": "bn", "fictional": true,
+      "source_id": "illustrative:ashford-manor:AM-005", "occurred_at": "2026-10-31T19:52:00+06:00",
+      "location": "South hall", "title": "দক্ষিণ হলের খাম",
+      "text": "2026-10-31T19:52:00+06:00 সময়ে দক্ষিণ হলের টেবিলে একটি সিল করা খাম ছিল। খামের ভেতরের কাগজ দেখা যায়নি। নীল ফিতা বা আর্কাইভের চিহ্নও নথিভুক্ত হয়নি। বস্তু: সিল করা খাম; স্থান: South hall। খামটি হারানো নথির সঙ্গে সম্পর্কিত কি না জানা নেই।"
+    },
+    {
+      "report_id": "AM-006", "language": "mixed", "fictional": true,
+      "source_id": "illustrative:ashford-manor:AM-006", "occurred_at": "2026-10-31T20:18:00+06:00",
+      "location": "Study", "title": "Loose cover in the study",
+      "text": "At 2026-10-31T20:18:00+06:00, study desk e ekta blue-ribbon cover paoa jay. Cover er bhitore archive folio chilo na. Object: blue-ribbon cover; Location: Study. এটি হারানো নথির মলাট কি না যাচাই হয়নি; এই পর্যবেক্ষণ কোনো ব্যক্তির কাজ প্রমাণ করে না।"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "torch": "2.6.0+cu124",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "limitation": "Four handcrafted smoke examples, not an accuracy evaluation; cache bypassed for real device execution.",
+  "checks": [
+    {
+      "device": "cpu",
+      "elapsed_ms": 36.70109999984561,
+      "shape": [
+        4,
+        384
+      ],
+      "cosines": {
+        "bangla": 0.9007340669631958,
+        "mixed": 0.9277280569076538,
+        "unrelated": 0.737783670425415
+      },
+      "metadata": {
+        "model_id": "intfloat/multilingual-e5-small",
+        "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+        "license": "MIT",
+        "dimensions": 384,
+        "max_length": 512,
+        "query_prefix": "query: ",
+        "passage_prefix": "passage: ",
+        "batch_size": 16,
+        "local_directory": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\models\\multilingual-e5-small",
+        "device": "cpu",
+        "loaded": true
+      },
+      "status": "passed"
+    },
+    {
+      "device": "cuda",
+      "elapsed_ms": 171.80559999997058,
+      "shape": [
+        4,
+        384
+      ],
+      "cosines": {
+        "bangla": 0.9007340669631958,
+        "mixed": 0.9277281165122986,
+        "unrelated": 0.737783670425415
+      },
+      "metadata": {
+        "model_id": "intfloat/multilingual-e5-small",
+        "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+        "license": "MIT",
+        "dimensions": 384,
+        "max_length": 512,
+        "query_prefix": "query: ",
+        "passage_prefix": "passage: ",
+        "batch_size": 16,
+        "local_directory": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\models\\multilingual-e5-small",
+        "device": "cuda",
+        "loaded": true
+      },
+      "status": "passed"
+    }
+  ]
+}

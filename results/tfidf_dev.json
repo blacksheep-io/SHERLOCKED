@@ -1,0 +1,710 @@
+{
+  "method": "word-tfidf-cosine",
+  "split": "dev",
+  "fit_split": "train",
+  "k": 5,
+  "protocol": "within-split leave-one-report-out; zero scores tie by report_id",
+  "python": "3.12.14",
+  "sklearn": "1.7.2",
+  "dataset_sha256": "da2eb5029532c7e4bc727491e40a6c09bf63693570d4055b5756feb53cf88a07",
+  "seed": 20261104,
+  "configuration": {
+    "tokenizer": "Unicode L/N/M, NFC, casefold",
+    "norm": "l2",
+    "smooth_idf": true,
+    "sublinear_tf": false,
+    "use_idf": true,
+    "stop_words": null
+  },
+  "platform": "Windows-10-10.0.19044-SP0",
+  "latency_p95_ms": 2.786799999739742,
+  "query_count": 20,
+  "aggregate": {
+    "precision_at_5": 0.28,
+    "recall_at_5": 0.35,
+    "mrr_at_5": 0.22999999999999998,
+    "ndcg_at_5": 0.22831777736015152,
+    "latency_ms": 2.311495000026298
+  },
+  "by_language": {
+    "bn": {
+      "precision_at_5": 0.1,
+      "recall_at_5": 0.125,
+      "mrr_at_5": 0.1125,
+      "ndcg_at_5": 0.07978678862473068,
+      "latency_ms": 2.7552750000268134
+    },
+    "en": {
+      "precision_at_5": 0.25,
+      "recall_at_5": 0.3125,
+      "mrr_at_5": 0.26875,
+      "ndcg_at_5": 0.21175389458909072,
+      "latency_ms": 2.4410749999788095
+    },
+    "mixed": {
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227,
+      "latency_ms": 1.9600250000735286
+    }
+  },
+  "by_variant": {
+    "incomplete": {
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.2,
+      "ndcg_at_5": 0.15101961822780524,
+      "latency_ms": 2.0487000001594424
+    },
+    "mixed": {
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227,
+      "latency_ms": 1.8845750000764383
+    },
+    "original": {
+      "precision_at_5": 0.25,
+      "recall_at_5": 0.3125,
+      "mrr_at_5": 0.2375,
+      "ndcg_at_5": 0.20160546131724072,
+      "latency_ms": 2.5410249999140433
+    },
+    "paraphrase": {
+      "precision_at_5": 0.26666666666666666,
+      "recall_at_5": 0.3333333333333333,
+      "mrr_at_5": 0.3333333333333333,
+      "ndcg_at_5": 0.24552989773865255,
+      "latency_ms": 2.4386000000049535
+    },
+    "translation": {
+      "precision_at_5": 0.1,
+      "recall_at_5": 0.125,
+      "mrr_at_5": 0.1125,
+      "ndcg_at_5": 0.07978678862473068,
+      "latency_ms": 2.7552750000268134
+    },
+    "transliteration": {
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227,
+      "latency_ms": 2.035475000070619
+    }
+  },
+  "queries": [
+    {
+      "query_id": "R00-0",
+      "family_id": "F00",
+      "language": "en",
+      "variant": "original",
+      "latency_ms": 2.7597000002970162,
+      "ranked_ids": [
+        "R03-0",
+        "R09-0",
+        "R17-0",
+        "R03-1",
+        "R00-3"
+      ],
+      "ranked_scores": [
+        0.8898736765120938,
+        0.8234930397302688,
+        0.7937405414702473,
+        0.42098457002690104,
+        0.4174902798573255
+      ],
+      "false_positive_ids": [
+        "R03-0",
+        "R09-0",
+        "R17-0",
+        "R03-1"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.2,
+      "ndcg_at_5": 0.15101961822780524
+    },
+    {
+      "query_id": "R00-1",
+      "family_id": "F00",
+      "language": "en",
+      "variant": "incomplete",
+      "latency_ms": 2.0487000001594424,
+      "ranked_ids": [
+        "R03-1",
+        "R09-1",
+        "R03-3",
+        "R03-0",
+        "R00-0"
+      ],
+      "ranked_scores": [
+        0.34304368433469506,
+        0.2940366413040995,
+        0.2626718603702315,
+        0.2614876060345367,
+        0.2596245814939886
+      ],
+      "false_positive_ids": [
+        "R03-1",
+        "R09-1",
+        "R03-3",
+        "R03-0"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.2,
+      "ndcg_at_5": 0.15101961822780524
+    },
+    {
+      "query_id": "R00-2",
+      "family_id": "F00",
+      "language": "bn",
+      "variant": "translation",
+      "latency_ms": 2.8283000001465552,
+      "ranked_ids": [
+        "R03-2",
+        "R09-2",
+        "R17-2",
+        "R17-3",
+        "R03-3"
+      ],
+      "ranked_scores": [
+        0.84759896028138,
+        0.732742587116643,
+        0.6426396948259386,
+        0.0486523691533187,
+        0.046683393502215696
+      ],
+      "false_positive_ids": [
+        "R03-2",
+        "R09-2",
+        "R17-2",
+        "R17-3",
+        "R03-3"
+      ],
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr_at_5": 0,
+      "ndcg_at_5": 0.0
+    },
+    {
+      "query_id": "R00-3",
+      "family_id": "F00",
+      "language": "mixed",
+      "variant": "mixed",
+      "latency_ms": 1.9265000000814325,
+      "ranked_ids": [
+        "R03-3",
+        "R09-3",
+        "R17-3",
+        "R00-0",
+        "R00-4"
+      ],
+      "ranked_scores": [
+        0.7646968606881691,
+        0.6355198513642817,
+        0.549985648057322,
+        0.4174902798573255,
+        0.38616778893028025
+      ],
+      "false_positive_ids": [
+        "R03-3",
+        "R09-3",
+        "R17-3"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R00-4",
+      "family_id": "F00",
+      "language": "mixed",
+      "variant": "transliteration",
+      "latency_ms": 2.0580999998855987,
+      "ranked_ids": [
+        "R03-4",
+        "R09-4",
+        "R17-4",
+        "R00-3",
+        "R00-0"
+      ],
+      "ranked_scores": [
+        0.8486763681623644,
+        0.7602182040701544,
+        0.7146654785890583,
+        0.38616778893028025,
+        0.29705130989701073
+      ],
+      "false_positive_ids": [
+        "R03-4",
+        "R09-4",
+        "R17-4"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R03-0",
+      "family_id": "F03",
+      "language": "en",
+      "variant": "original",
+      "latency_ms": 2.562099999977363,
+      "ranked_ids": [
+        "R09-0",
+        "R00-0",
+        "R17-0",
+        "R03-1",
+        "R09-1"
+      ],
+      "ranked_scores": [
+        0.9300527375987864,
+        0.8898736765120938,
+        0.7994362968531838,
+        0.5107454647545928,
+        0.4660873088287196
+      ],
+      "false_positive_ids": [
+        "R09-0",
+        "R00-0",
+        "R17-0",
+        "R09-1"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.16812753627111746
+    },
+    {
+      "query_id": "R03-1",
+      "family_id": "F03",
+      "language": "en",
+      "variant": "paraphrase",
+      "latency_ms": 2.512600000045495,
+      "ranked_ids": [
+        "R09-1",
+        "R17-1",
+        "R03-0",
+        "R09-0",
+        "R00-0"
+      ],
+      "ranked_scores": [
+        0.9505671919844069,
+        0.8605476334751136,
+        0.5107454647545928,
+        0.4619534973096754,
+        0.42098457002690104
+      ],
+      "false_positive_ids": [
+        "R09-1",
+        "R17-1",
+        "R09-0",
+        "R00-0"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.3333333333333333,
+      "ndcg_at_5": 0.19519002499605084
+    },
+    {
+      "query_id": "R03-2",
+      "family_id": "F03",
+      "language": "bn",
+      "variant": "translation",
+      "latency_ms": 2.786799999739742,
+      "ranked_ids": [
+        "R09-2",
+        "R00-2",
+        "R17-2",
+        "R17-3",
+        "R03-3"
+      ],
+      "ranked_scores": [
+        0.8808536367369624,
+        0.84759896028138,
+        0.6426396948259386,
+        0.0486523691533187,
+        0.046683393502215696
+      ],
+      "false_positive_ids": [
+        "R09-2",
+        "R00-2",
+        "R17-2",
+        "R17-3"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.2,
+      "ndcg_at_5": 0.15101961822780524
+    },
+    {
+      "query_id": "R03-3",
+      "family_id": "F03",
+      "language": "mixed",
+      "variant": "mixed",
+      "latency_ms": 1.9044000000576489,
+      "ranked_ids": [
+        "R09-3",
+        "R00-3",
+        "R17-3",
+        "R03-0",
+        "R03-4"
+      ],
+      "ranked_scores": [
+        0.855180465345364,
+        0.7646968606881691,
+        0.558454627339525,
+        0.40581883514324046,
+        0.37116860338972346
+      ],
+      "false_positive_ids": [
+        "R09-3",
+        "R00-3",
+        "R17-3"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R03-4",
+      "family_id": "F03",
+      "language": "mixed",
+      "variant": "transliteration",
+      "latency_ms": 2.0530000001599547,
+      "ranked_ids": [
+        "R09-4",
+        "R00-4",
+        "R17-4",
+        "R03-3",
+        "R03-0"
+      ],
+      "ranked_scores": [
+        0.9048974950591171,
+        0.8486763681623644,
+        0.7217222726942536,
+        0.37116860338972346,
+        0.28523014000953384
+      ],
+      "false_positive_ids": [
+        "R09-4",
+        "R00-4",
+        "R17-4"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R09-0",
+      "family_id": "F09",
+      "language": "en",
+      "variant": "original",
+      "latency_ms": 2.485099999830709,
+      "ranked_ids": [
+        "R03-0",
+        "R00-0",
+        "R17-0",
+        "R09-1",
+        "R03-1"
+      ],
+      "ranked_scores": [
+        0.9300527375987864,
+        0.8234930397302688,
+        0.7756222272926138,
+        0.5345830982353732,
+        0.4619534973096754
+      ],
+      "false_positive_ids": [
+        "R03-0",
+        "R00-0",
+        "R17-0",
+        "R03-1"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.16812753627111746
+    },
+    {
+      "query_id": "R09-1",
+      "family_id": "F09",
+      "language": "en",
+      "variant": "paraphrase",
+      "latency_ms": 2.442800000153511,
+      "ranked_ids": [
+        "R03-1",
+        "R17-1",
+        "R09-0",
+        "R03-0",
+        "R09-3"
+      ],
+      "ranked_scores": [
+        0.9505671919844069,
+        0.8423844017570297,
+        0.5345830982353732,
+        0.4660873088287196,
+        0.38219646049965533
+      ],
+      "false_positive_ids": [
+        "R03-1",
+        "R17-1",
+        "R03-0"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.3333333333333333,
+      "ndcg_at_5": 0.34620964322385606
+    },
+    {
+      "query_id": "R09-2",
+      "family_id": "F09",
+      "language": "bn",
+      "variant": "translation",
+      "latency_ms": 2.761700000064593,
+      "ranked_ids": [
+        "R03-2",
+        "R00-2",
+        "R17-2",
+        "R17-3",
+        "R03-3"
+      ],
+      "ranked_scores": [
+        0.8808536367369624,
+        0.732742587116643,
+        0.6245498055924518,
+        0.047282836620522656,
+        0.04536928635275445
+      ],
+      "false_positive_ids": [
+        "R03-2",
+        "R00-2",
+        "R17-2",
+        "R17-3",
+        "R03-3"
+      ],
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr_at_5": 0,
+      "ndcg_at_5": 0.0
+    },
+    {
+      "query_id": "R09-3",
+      "family_id": "F09",
+      "language": "mixed",
+      "variant": "mixed",
+      "latency_ms": 1.879200000075798,
+      "ranked_ids": [
+        "R03-3",
+        "R00-3",
+        "R17-3",
+        "R09-0",
+        "R09-4"
+      ],
+      "ranked_scores": [
+        0.855180465345364,
+        0.6355198513642817,
+        0.5243434644731475,
+        0.45305158058271877,
+        0.4312242009516343
+      ],
+      "false_positive_ids": [
+        "R03-3",
+        "R00-3",
+        "R17-3"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R09-4",
+      "family_id": "F09",
+      "language": "mixed",
+      "variant": "transliteration",
+      "latency_ms": 2.040600000327686,
+      "ranked_ids": [
+        "R03-4",
+        "R00-4",
+        "R17-4",
+        "R09-3",
+        "R09-0"
+      ],
+      "ranked_scores": [
+        0.9048974950591171,
+        0.7602182040701544,
+        0.6925850849174986,
+        0.4312242009516343,
+        0.3337020730184597
+      ],
+      "false_positive_ids": [
+        "R03-4",
+        "R00-4",
+        "R17-4"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R17-0",
+      "family_id": "F17",
+      "language": "en",
+      "variant": "original",
+      "latency_ms": 2.357199999551085,
+      "ranked_ids": [
+        "R03-0",
+        "R00-0",
+        "R09-0",
+        "R17-1",
+        "R17-3"
+      ],
+      "ranked_scores": [
+        0.7994362968531838,
+        0.7937405414702473,
+        0.7756222272926138,
+        0.49547212749869507,
+        0.3735702922851236
+      ],
+      "false_positive_ids": [
+        "R03-0",
+        "R00-0",
+        "R09-0"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R17-1",
+      "family_id": "F17",
+      "language": "en",
+      "variant": "paraphrase",
+      "latency_ms": 2.3603999998158542,
+      "ranked_ids": [
+        "R03-1",
+        "R09-1",
+        "R17-0",
+        "R03-0",
+        "R00-0"
+      ],
+      "ranked_scores": [
+        0.8605476334751136,
+        0.8423844017570297,
+        0.49547212749869507,
+        0.33497114737203815,
+        0.3325845735783754
+      ],
+      "false_positive_ids": [
+        "R03-1",
+        "R09-1",
+        "R03-0",
+        "R00-0"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.3333333333333333,
+      "ndcg_at_5": 0.19519002499605084
+    },
+    {
+      "query_id": "R17-2",
+      "family_id": "F17",
+      "language": "bn",
+      "variant": "translation",
+      "latency_ms": 2.6443000001563632,
+      "ranked_ids": [
+        "R00-2",
+        "R03-2",
+        "R09-2",
+        "R17-3",
+        "R03-3"
+      ],
+      "ranked_scores": [
+        0.6426396948259386,
+        0.6426396948259386,
+        0.6245498055924518,
+        0.049681512706304914,
+        0.0476708873137282
+      ],
+      "false_positive_ids": [
+        "R00-2",
+        "R03-2",
+        "R09-2",
+        "R03-3"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.25,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.16812753627111746
+    },
+    {
+      "query_id": "R17-3",
+      "family_id": "F17",
+      "language": "mixed",
+      "variant": "mixed",
+      "latency_ms": 1.8282000000908738,
+      "ranked_ids": [
+        "R03-3",
+        "R00-3",
+        "R09-3",
+        "R17-0",
+        "R17-4"
+      ],
+      "ranked_scores": [
+        0.558454627339525,
+        0.549985648057322,
+        0.5243434644731475,
+        0.3735702922851236,
+        0.3291875463280565
+      ],
+      "false_positive_ids": [
+        "R03-3",
+        "R00-3",
+        "R09-3"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    },
+    {
+      "query_id": "R17-4",
+      "family_id": "F17",
+      "language": "mixed",
+      "variant": "transliteration",
+      "latency_ms": 1.9901999999092368,
+      "ranked_ids": [
+        "R03-4",
+        "R00-4",
+        "R09-4",
+        "R17-3",
+        "R17-0"
+      ],
+      "ranked_scores": [
+        0.7217222726942536,
+        0.7146654785890583,
+        0.6925850849174986,
+        0.3291875463280565,
+        0.25310941951331695
+      ],
+      "false_positive_ids": [
+        "R03-4",
+        "R00-4",
+        "R09-4"
+      ],
+      "precision_at_5": 0.4,
+      "recall_at_5": 0.5,
+      "mrr_at_5": 0.25,
+      "ndcg_at_5": 0.3191471544989227
+    }
+  ]
+}

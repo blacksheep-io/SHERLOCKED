@@ -1,0 +1,4761 @@
+{
+  "schema_version": 1,
+  "experiment_id": "20261104T133053-7e97f168",
+  "created_at_utc": "2026-11-04T13:30:53.310918+00:00",
+  "dataset_path": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\data\\reports.jsonl",
+  "dataset_sha256": "da2eb5029532c7e4bc727491e40a6c09bf63693570d4055b5756feb53cf88a07",
+  "code_sha256": "8471fdda2b47df37624a96b957a11ab56c5aab2ed72052d27145dd86a300dfd3",
+  "split": "dev",
+  "fit_split": "train",
+  "k": 5,
+  "seed": 20261104,
+  "configuration": {
+    "device": "auto",
+    "source_only": true,
+    "explain_passages": false
+  },
+  "protocol": "Within held-out partition leave-one-report-out; fixed K; zero scores tie by ID.",
+  "label_definition": "Relevant iff same non-null synthetic scenario family; query self excluded.",
+  "platform": "Windows-10-10.0.19044-SP0",
+  "python": "3.12.14",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.7.2",
+    "streamlit": "1.51.0",
+    "plotly": "6.4.0",
+    "torch": "2.6.0+cu124",
+    "sentence-transformers": "3.4.1"
+  },
+  "methods": {
+    "tfidf": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 20,
+        "precision": 0.28,
+        "recall": 0.35,
+        "mrr": 0.23,
+        "ndcg": 0.22831777736015152,
+        "latency_ms": 15.64292000007299,
+        "latency_p95_ms": 16.400099999827944,
+        "no_match_query_count": 0,
+        "no_match_false_positive_query_rate": null,
+        "mean_unrelated_results_at_k": 3.6
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.25,
+            0.31
+          ],
+          "recall": [
+            0.3125,
+            0.3875
+          ],
+          "mrr": [
+            0.19833333333333333,
+            0.26166666666666666
+          ],
+          "ndcg": [
+            0.19868160624265935,
+            0.2557454281392314
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 4,
+          "precision": 0.1,
+          "recall": 0.125,
+          "mrr": 0.1125,
+          "ndcg": 0.07978678862473068,
+          "latency_ms": 16.330124999967666,
+          "latency_p95_ms": 16.400099999827944,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4.5
+        },
+        "en": {
+          "query_count": 8,
+          "precision": 0.25,
+          "recall": 0.3125,
+          "mrr": 0.26875,
+          "ndcg": 0.21175389458909072,
+          "latency_ms": 15.954512500115925,
+          "latency_p95_ms": 18.966500000260567,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.75
+        },
+        "mixed": {
+          "query_count": 8,
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227,
+          "latency_ms": 14.987725000082719,
+          "latency_p95_ms": 15.167699999892648,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        }
+      },
+      "by_variant": {
+        "incomplete": {
+          "query_count": 1,
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.2,
+          "ndcg": 0.15101961822780524,
+          "latency_ms": 13.394200000220735,
+          "latency_p95_ms": 13.394200000220735,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227,
+          "latency_ms": 15.093600000000151,
+          "latency_p95_ms": 15.167699999892648,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "original": {
+          "query_count": 4,
+          "precision": 0.25,
+          "recall": 0.3125,
+          "mrr": 0.2375,
+          "ndcg": 0.20160546131724072,
+          "latency_ms": 16.61927500015281,
+          "latency_p95_ms": 18.966500000260567,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.75
+        },
+        "paraphrase": {
+          "query_count": 3,
+          "precision": 0.26666666666666666,
+          "recall": 0.3333333333333333,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.24552989773865258,
+          "latency_ms": 15.921600000031807,
+          "latency_p95_ms": 16.06579999997848,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.6666666666666665
+        },
+        "translation": {
+          "query_count": 4,
+          "precision": 0.1,
+          "recall": 0.125,
+          "mrr": 0.1125,
+          "ndcg": 0.07978678862473068,
+          "latency_ms": 16.330124999967666,
+          "latency_p95_ms": 16.400099999827944,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4.5
+        },
+        "transliteration": {
+          "query_count": 4,
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227,
+          "latency_ms": 14.881850000165286,
+          "latency_p95_ms": 14.925500000117609,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        }
+      },
+      "by_family": {
+        "F00": {
+          "query_count": 5,
+          "precision": 0.24000000000000002,
+          "recall": 0.3,
+          "mrr": 0.18,
+          "ndcg": 0.18806670909069118,
+          "latency_ms": 15.72390000010273,
+          "latency_p95_ms": 18.966500000260567,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.8
+        },
+        "F03": {
+          "query_count": 5,
+          "precision": 0.28,
+          "recall": 0.35,
+          "mrr": 0.25666666666666665,
+          "ndcg": 0.2305262976985638,
+          "latency_ms": 15.677899999991496,
+          "latency_p95_ms": 16.29610000009052,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.6
+        },
+        "F09": {
+          "query_count": 5,
+          "precision": 0.28,
+          "recall": 0.35,
+          "mrr": 0.21666666666666667,
+          "ndcg": 0.23052629769856378,
+          "latency_ms": 15.604140000050393,
+          "latency_p95_ms": 16.400099999827944,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.6
+        },
+        "F17": {
+          "query_count": 5,
+          "precision": 0.32,
+          "recall": 0.4,
+          "mrr": 0.26666666666666666,
+          "ndcg": 0.2641518049527873,
+          "latency_ms": 15.565740000147343,
+          "latency_p95_ms": 16.351100000065344,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.4
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 0.0,
+        "en→en": 0.875,
+        "en→mixed": 0.1875,
+        "bn→bn": null,
+        "bn→en": 0.0,
+        "bn→mixed": 0.25,
+        "mixed→bn": 0.0,
+        "mixed→en": 0.5,
+        "mixed→mixed": 1.0
+      },
+      "queries": [
+        {
+          "query_id": "R00-0",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 18.966500000260567,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-0",
+            "R09-0",
+            "R17-0",
+            "R03-1",
+            "R00-3"
+          ],
+          "ranked_scores": [
+            0.8898736765120938,
+            0.8234930397302688,
+            0.7937405414702473,
+            0.42098457002690104,
+            0.4174902798573255
+          ],
+          "positive_score_ids": [
+            "R03-0",
+            "R09-0",
+            "R17-0",
+            "R03-1",
+            "R00-3"
+          ],
+          "false_positive_ids": [
+            "R03-0",
+            "R09-0",
+            "R17-0",
+            "R03-1"
+          ],
+          "missed_relevant_ids": [
+            "R00-1",
+            "R00-2",
+            "R00-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.2,
+          "ndcg": 0.15101961822780524
+        },
+        {
+          "query_id": "R00-1",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "incomplete",
+          "latency_ms": 13.394200000220735,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-1",
+            "R09-1",
+            "R03-3",
+            "R03-0",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            0.34304368433469506,
+            0.2940366413040995,
+            0.2626718603702315,
+            0.2614876060345367,
+            0.2596245814939886
+          ],
+          "positive_score_ids": [
+            "R03-1",
+            "R09-1",
+            "R03-3",
+            "R03-0",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R03-1",
+            "R09-1",
+            "R03-3",
+            "R03-0"
+          ],
+          "missed_relevant_ids": [
+            "R00-2",
+            "R00-3",
+            "R00-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "en",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.2,
+          "ndcg": 0.15101961822780524
+        },
+        {
+          "query_id": "R00-2",
+          "family_id": "F00",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 16.273199999886856,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-2",
+            "R09-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            0.84759896028138,
+            0.732742587116643,
+            0.6426396948259386,
+            0.0486523691533187,
+            0.046683393502215696
+          ],
+          "positive_score_ids": [
+            "R03-2",
+            "R09-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R03-2",
+            "R09-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-3",
+            "R00-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R00-3",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 15.11160000018208,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-3",
+            "R09-3",
+            "R17-3",
+            "R00-0",
+            "R00-4"
+          ],
+          "ranked_scores": [
+            0.7646968606881691,
+            0.6355198513642817,
+            0.549985648057322,
+            0.4174902798573255,
+            0.38616778893028025
+          ],
+          "positive_score_ids": [
+            "R03-3",
+            "R09-3",
+            "R17-3",
+            "R00-0",
+            "R00-4"
+          ],
+          "false_positive_ids": [
+            "R03-3",
+            "R09-3",
+            "R17-3"
+          ],
+          "missed_relevant_ids": [
+            "R00-1",
+            "R00-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R00-4",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 14.873999999963416,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-4",
+            "R09-4",
+            "R17-4",
+            "R00-3",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            0.8486763681623644,
+            0.7602182040701544,
+            0.7146654785890583,
+            0.38616778893028025,
+            0.29705130989701073
+          ],
+          "positive_score_ids": [
+            "R03-4",
+            "R09-4",
+            "R17-4",
+            "R00-3",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R03-4",
+            "R09-4",
+            "R17-4"
+          ],
+          "missed_relevant_ids": [
+            "R00-1",
+            "R00-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R03-0",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 15.934399999878224,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-0",
+            "R00-0",
+            "R17-0",
+            "R03-1",
+            "R09-1"
+          ],
+          "ranked_scores": [
+            0.9300527375987864,
+            0.8898736765120938,
+            0.7994362968531838,
+            0.5107454647545928,
+            0.4660873088287196
+          ],
+          "positive_score_ids": [
+            "R09-0",
+            "R00-0",
+            "R17-0",
+            "R03-1",
+            "R09-1"
+          ],
+          "false_positive_ids": [
+            "R09-0",
+            "R00-0",
+            "R17-0",
+            "R09-1"
+          ],
+          "missed_relevant_ids": [
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.25,
+          "ndcg": 0.16812753627111746
+        },
+        {
+          "query_id": "R03-1",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 16.06579999997848,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-1",
+            "R17-1",
+            "R03-0",
+            "R09-0",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            0.9505671919844069,
+            0.8605476334751136,
+            0.5107454647545928,
+            0.4619534973096754,
+            0.42098457002690104
+          ],
+          "positive_score_ids": [
+            "R09-1",
+            "R17-1",
+            "R03-0",
+            "R09-0",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R09-1",
+            "R17-1",
+            "R09-0",
+            "R00-0"
+          ],
+          "missed_relevant_ids": [
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.19519002499605084
+        },
+        {
+          "query_id": "R03-2",
+          "family_id": "F03",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 16.29610000009052,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-2",
+            "R00-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            0.8808536367369624,
+            0.84759896028138,
+            0.6426396948259386,
+            0.0486523691533187,
+            0.046683393502215696
+          ],
+          "positive_score_ids": [
+            "R09-2",
+            "R00-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R09-2",
+            "R00-2",
+            "R17-2",
+            "R17-3"
+          ],
+          "missed_relevant_ids": [
+            "R03-0",
+            "R03-1",
+            "R03-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.2,
+          "ndcg": 0.15101961822780524
+        },
+        {
+          "query_id": "R03-3",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 15.167699999892648,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-3",
+            "R00-3",
+            "R17-3",
+            "R03-0",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            0.855180465345364,
+            0.7646968606881691,
+            0.558454627339525,
+            0.40581883514324046,
+            0.37116860338972346
+          ],
+          "positive_score_ids": [
+            "R09-3",
+            "R00-3",
+            "R17-3",
+            "R03-0",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R09-3",
+            "R00-3",
+            "R17-3"
+          ],
+          "missed_relevant_ids": [
+            "R03-1",
+            "R03-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R03-4",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 14.925500000117609,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-4",
+            "R00-4",
+            "R17-4",
+            "R03-3",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            0.9048974950591171,
+            0.8486763681623644,
+            0.7217222726942536,
+            0.37116860338972346,
+            0.28523014000953384
+          ],
+          "positive_score_ids": [
+            "R09-4",
+            "R00-4",
+            "R17-4",
+            "R03-3",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R09-4",
+            "R00-4",
+            "R17-4"
+          ],
+          "missed_relevant_ids": [
+            "R03-1",
+            "R03-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R09-0",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 15.828900000087742,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-0",
+            "R00-0",
+            "R17-0",
+            "R09-1",
+            "R03-1"
+          ],
+          "ranked_scores": [
+            0.9300527375987864,
+            0.8234930397302688,
+            0.7756222272926138,
+            0.5345830982353732,
+            0.4619534973096754
+          ],
+          "positive_score_ids": [
+            "R03-0",
+            "R00-0",
+            "R17-0",
+            "R09-1",
+            "R03-1"
+          ],
+          "false_positive_ids": [
+            "R03-0",
+            "R00-0",
+            "R17-0",
+            "R03-1"
+          ],
+          "missed_relevant_ids": [
+            "R09-2",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.25,
+          "ndcg": 0.16812753627111746
+        },
+        {
+          "query_id": "R09-1",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 15.843900000163558,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-1",
+            "R17-1",
+            "R09-0",
+            "R03-0",
+            "R09-3"
+          ],
+          "ranked_scores": [
+            0.9505671919844069,
+            0.8423844017570297,
+            0.5345830982353732,
+            0.4660873088287196,
+            0.38219646049965533
+          ],
+          "positive_score_ids": [
+            "R03-1",
+            "R17-1",
+            "R09-0",
+            "R03-0",
+            "R09-3"
+          ],
+          "false_positive_ids": [
+            "R03-1",
+            "R17-1",
+            "R03-0"
+          ],
+          "missed_relevant_ids": [
+            "R09-2",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.34620964322385606
+        },
+        {
+          "query_id": "R09-2",
+          "family_id": "F09",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 16.400099999827944,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-2",
+            "R00-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            0.8808536367369624,
+            0.732742587116643,
+            0.6245498055924518,
+            0.047282836620522656,
+            0.04536928635275445
+          ],
+          "positive_score_ids": [
+            "R03-2",
+            "R00-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R03-2",
+            "R00-2",
+            "R17-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-3",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 15.056499999900552,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-3",
+            "R00-3",
+            "R17-3",
+            "R09-0",
+            "R09-4"
+          ],
+          "ranked_scores": [
+            0.855180465345364,
+            0.6355198513642817,
+            0.5243434644731475,
+            0.45305158058271877,
+            0.4312242009516343
+          ],
+          "positive_score_ids": [
+            "R03-3",
+            "R00-3",
+            "R17-3",
+            "R09-0",
+            "R09-4"
+          ],
+          "false_positive_ids": [
+            "R03-3",
+            "R00-3",
+            "R17-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-1",
+            "R09-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R09-4",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 14.891300000272167,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-4",
+            "R00-4",
+            "R17-4",
+            "R09-3",
+            "R09-0"
+          ],
+          "ranked_scores": [
+            0.9048974950591171,
+            0.7602182040701544,
+            0.6925850849174986,
+            0.4312242009516343,
+            0.3337020730184597
+          ],
+          "positive_score_ids": [
+            "R03-4",
+            "R00-4",
+            "R17-4",
+            "R09-3",
+            "R09-0"
+          ],
+          "false_positive_ids": [
+            "R03-4",
+            "R00-4",
+            "R17-4"
+          ],
+          "missed_relevant_ids": [
+            "R09-1",
+            "R09-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R17-0",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 15.747300000384712,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-0",
+            "R00-0",
+            "R09-0",
+            "R17-1",
+            "R17-3"
+          ],
+          "ranked_scores": [
+            0.7994362968531838,
+            0.7937405414702473,
+            0.7756222272926138,
+            0.49547212749869507,
+            0.3735702922851236
+          ],
+          "positive_score_ids": [
+            "R03-0",
+            "R00-0",
+            "R09-0",
+            "R17-1",
+            "R17-3"
+          ],
+          "false_positive_ids": [
+            "R03-0",
+            "R00-0",
+            "R09-0"
+          ],
+          "missed_relevant_ids": [
+            "R17-2",
+            "R17-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R17-1",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 15.855099999953381,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-1",
+            "R09-1",
+            "R17-0",
+            "R03-0",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            0.8605476334751136,
+            0.8423844017570297,
+            0.49547212749869507,
+            0.33497114737203815,
+            0.3325845735783754
+          ],
+          "positive_score_ids": [
+            "R03-1",
+            "R09-1",
+            "R17-0",
+            "R03-0",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R03-1",
+            "R09-1",
+            "R03-0",
+            "R00-0"
+          ],
+          "missed_relevant_ids": [
+            "R17-2",
+            "R17-3",
+            "R17-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.19519002499605084
+        },
+        {
+          "query_id": "R17-2",
+          "family_id": "F17",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 16.351100000065344,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-2",
+            "R03-2",
+            "R09-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            0.6426396948259386,
+            0.6426396948259386,
+            0.6245498055924518,
+            0.049681512706304914,
+            0.0476708873137282
+          ],
+          "positive_score_ids": [
+            "R00-2",
+            "R03-2",
+            "R09-2",
+            "R17-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-2",
+            "R03-2",
+            "R09-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.25,
+          "ndcg": 0.16812753627111746
+        },
+        {
+          "query_id": "R17-3",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 15.038600000025326,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-3",
+            "R00-3",
+            "R09-3",
+            "R17-0",
+            "R17-4"
+          ],
+          "ranked_scores": [
+            0.558454627339525,
+            0.549985648057322,
+            0.5243434644731475,
+            0.3735702922851236,
+            0.3291875463280565
+          ],
+          "positive_score_ids": [
+            "R03-3",
+            "R00-3",
+            "R09-3",
+            "R17-0",
+            "R17-4"
+          ],
+          "false_positive_ids": [
+            "R03-3",
+            "R00-3",
+            "R09-3"
+          ],
+          "missed_relevant_ids": [
+            "R17-1",
+            "R17-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R17-4",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 14.836600000307953,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-4",
+            "R00-4",
+            "R09-4",
+            "R17-3",
+            "R17-0"
+          ],
+          "ranked_scores": [
+            0.7217222726942536,
+            0.7146654785890583,
+            0.6925850849174986,
+            0.3291875463280565,
+            0.25310941951331695
+          ],
+          "positive_score_ids": [
+            "R03-4",
+            "R00-4",
+            "R09-4",
+            "R17-3",
+            "R17-0"
+          ],
+          "false_positive_ids": [
+            "R03-4",
+            "R00-4",
+            "R09-4"
+          ],
+          "missed_relevant_ids": [
+            "R17-1",
+            "R17-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        }
+      ]
+    },
+    "bm25": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 20,
+        "precision": 0.33,
+        "recall": 0.4125,
+        "mrr": 0.23916666666666667,
+        "ndcg": 0.27084738996201196,
+        "latency_ms": 15.712910000070224,
+        "latency_p95_ms": 17.045499999767344,
+        "no_match_query_count": 0,
+        "no_match_false_positive_query_rate": null,
+        "mean_unrelated_results_at_k": 3.35
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.32,
+            0.35000000000000003
+          ],
+          "recall": [
+            0.4,
+            0.4375
+          ],
+          "mrr": [
+            0.21666666666666667,
+            0.26166666666666666
+          ],
+          "ndcg": [
+            0.2615856172462905,
+            0.2868047476869581
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 4,
+          "precision": 0.1,
+          "recall": 0.125,
+          "mrr": 0.1125,
+          "ndcg": 0.07978678862473068,
+          "latency_ms": 16.986575000032644,
+          "latency_p95_ms": 17.09819999996398,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4.5
+        },
+        "en": {
+          "query_count": 8,
+          "precision": 0.375,
+          "recall": 0.46875,
+          "mrr": 0.29166666666666663,
+          "ndcg": 0.3180779260937418,
+          "latency_ms": 15.977875000146469,
+          "latency_p95_ms": 16.768400000273687,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.125
+        },
+        "mixed": {
+          "query_count": 8,
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227,
+          "latency_ms": 14.811112500012769,
+          "latency_p95_ms": 15.387200000077428,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        }
+      },
+      "by_variant": {
+        "incomplete": {
+          "query_count": 1,
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.34620964322385606,
+          "latency_ms": 12.698700000328245,
+          "latency_p95_ms": 12.698700000328245,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227,
+          "latency_ms": 14.984624999897278,
+          "latency_p95_ms": 15.387200000077428,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "original": {
+          "query_count": 4,
+          "precision": 0.30000000000000004,
+          "recall": 0.375,
+          "mrr": 0.25,
+          "ndcg": 0.24363734538502008,
+          "latency_ms": 16.380099999992126,
+          "latency_p95_ms": 16.581800000039948,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.5
+        },
+        "paraphrase": {
+          "query_count": 3,
+          "precision": 0.4666666666666667,
+          "recall": 0.5833333333333334,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.40795479466199935,
+          "latency_ms": 16.534633333625,
+          "latency_p95_ms": 16.768400000273687,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2.6666666666666665
+        },
+        "translation": {
+          "query_count": 4,
+          "precision": 0.1,
+          "recall": 0.125,
+          "mrr": 0.1125,
+          "ndcg": 0.07978678862473068,
+          "latency_ms": 16.986575000032644,
+          "latency_p95_ms": 17.09819999996398,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4.5
+        },
+        "transliteration": {
+          "query_count": 4,
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227,
+          "latency_ms": 14.63760000012826,
+          "latency_p95_ms": 15.020100000128878,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        }
+      },
+      "by_family": {
+        "F00": {
+          "query_count": 5,
+          "precision": 0.32,
+          "recall": 0.4,
+          "mrr": 0.26666666666666666,
+          "ndcg": 0.2641518049527873,
+          "latency_ms": 15.181240000129037,
+          "latency_p95_ms": 16.975100000308885,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.4
+        },
+        "F03": {
+          "query_count": 5,
+          "precision": 0.32,
+          "recall": 0.4,
+          "mrr": 0.25666666666666665,
+          "ndcg": 0.2607302213441248,
+          "latency_ms": 16.16334000009374,
+          "latency_p95_ms": 17.09819999996398,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.4
+        },
+        "F09": {
+          "query_count": 5,
+          "precision": 0.32,
+          "recall": 0.4,
+          "mrr": 0.21666666666666667,
+          "ndcg": 0.2641518049527873,
+          "latency_ms": 15.961220000008325,
+          "latency_p95_ms": 17.045499999767344,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.4
+        },
+        "F17": {
+          "query_count": 5,
+          "precision": 0.36,
+          "recall": 0.45,
+          "mrr": 0.21666666666666667,
+          "ndcg": 0.29435572859834835,
+          "latency_ms": 15.545840000049793,
+          "latency_p95_ms": 16.827500000090367,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.2
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 0.0,
+        "en→en": 0.875,
+        "en→mixed": 0.5,
+        "bn→bn": null,
+        "bn→en": 0.0,
+        "bn→mixed": 0.25,
+        "mixed→bn": 0.0,
+        "mixed→en": 0.6875,
+        "mixed→mixed": 0.625
+      },
+      "queries": [
+        {
+          "query_id": "R00-0",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 16.4810999999645,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-0",
+            "R09-0",
+            "R17-0",
+            "R00-3",
+            "R03-1"
+          ],
+          "ranked_scores": [
+            15.69644644420245,
+            14.672567590618817,
+            13.04686876799609,
+            8.4173660699742,
+            7.580413319703953
+          ],
+          "positive_score_ids": [
+            "R03-0",
+            "R09-0",
+            "R17-0",
+            "R00-3",
+            "R03-1"
+          ],
+          "false_positive_ids": [
+            "R03-0",
+            "R09-0",
+            "R17-0",
+            "R03-1"
+          ],
+          "missed_relevant_ids": [
+            "R00-1",
+            "R00-2",
+            "R00-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.25,
+          "ndcg": 0.16812753627111746
+        },
+        {
+          "query_id": "R00-1",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "incomplete",
+          "latency_ms": 12.698700000328245,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-1",
+            "R09-1",
+            "R00-3",
+            "R03-3",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            6.443611717627858,
+            5.480071455468089,
+            4.452361085175597,
+            4.452361085175597,
+            4.087007010435041
+          ],
+          "positive_score_ids": [
+            "R03-1",
+            "R09-1",
+            "R00-3",
+            "R03-3",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R03-1",
+            "R09-1",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R00-2",
+            "R00-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.34620964322385606
+        },
+        {
+          "query_id": "R00-2",
+          "family_id": "F00",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 16.975100000308885,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-2",
+            "R09-2",
+            "R17-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            22.23566152202985,
+            19.961718338811735,
+            17.13722651959853,
+            1.0590505912852184,
+            1.0590505912852184
+          ],
+          "positive_score_ids": [
+            "R03-2",
+            "R09-2",
+            "R17-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R03-2",
+            "R09-2",
+            "R17-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.25,
+          "ndcg": 0.16812753627111746
+        },
+        {
+          "query_id": "R00-3",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 15.069199999743432,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-3",
+            "R09-3",
+            "R17-3",
+            "R00-0",
+            "R00-4"
+          ],
+          "ranked_scores": [
+            11.095364655243026,
+            9.784084412531923,
+            7.702054161352647,
+            6.5724799636272255,
+            5.8077241094482535
+          ],
+          "positive_score_ids": [
+            "R03-3",
+            "R09-3",
+            "R17-3",
+            "R00-0",
+            "R00-4"
+          ],
+          "false_positive_ids": [
+            "R03-3",
+            "R09-3",
+            "R17-3"
+          ],
+          "missed_relevant_ids": [
+            "R00-1",
+            "R00-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R00-4",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 14.682100000300125,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-4",
+            "R09-4",
+            "R17-4",
+            "R00-3",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            16.90364479309655,
+            15.733171767030372,
+            13.874713011165447,
+            6.506389904115437,
+            5.74554803102197
+          ],
+          "positive_score_ids": [
+            "R03-4",
+            "R09-4",
+            "R17-4",
+            "R00-3",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R03-4",
+            "R09-4",
+            "R17-4"
+          ],
+          "missed_relevant_ids": [
+            "R00-1",
+            "R00-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R03-0",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 16.581800000039948,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-0",
+            "R00-0",
+            "R17-0",
+            "R03-1",
+            "R09-1"
+          ],
+          "ranked_scores": [
+            16.87531160653606,
+            15.69644644420245,
+            13.04686876799609,
+            9.653346596076569,
+            8.6898063339168
+          ],
+          "positive_score_ids": [
+            "R09-0",
+            "R00-0",
+            "R17-0",
+            "R03-1",
+            "R09-1"
+          ],
+          "false_positive_ids": [
+            "R09-0",
+            "R00-0",
+            "R17-0",
+            "R09-1"
+          ],
+          "missed_relevant_ids": [
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.25,
+          "ndcg": 0.16812753627111746
+        },
+        {
+          "query_id": "R03-1",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 16.729400000258465,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-1",
+            "R17-1",
+            "R03-0",
+            "R09-0",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            21.84449131871246,
+            18.24166389103459,
+            9.902389025248413,
+            8.878510171664779,
+            8.125337898099044
+          ],
+          "positive_score_ids": [
+            "R09-1",
+            "R17-1",
+            "R03-0",
+            "R09-0",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R09-1",
+            "R17-1",
+            "R09-0"
+          ],
+          "missed_relevant_ids": [
+            "R03-2",
+            "R03-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.34620964322385606
+        },
+        {
+          "query_id": "R03-2",
+          "family_id": "F03",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 17.09819999996398,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-2",
+            "R00-2",
+            "R17-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            23.26467346314694,
+            22.23566152202985,
+            17.13722651959853,
+            1.0590505912852184,
+            1.0590505912852184
+          ],
+          "positive_score_ids": [
+            "R09-2",
+            "R00-2",
+            "R17-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R09-2",
+            "R00-2",
+            "R17-2",
+            "R00-3"
+          ],
+          "missed_relevant_ids": [
+            "R03-0",
+            "R03-1",
+            "R03-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.25,
+          "mrr": 0.2,
+          "ndcg": 0.15101961822780524
+        },
+        {
+          "query_id": "R03-3",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 15.387200000077428,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-3",
+            "R00-3",
+            "R17-3",
+            "R03-0",
+            "R03-1"
+          ],
+          "ranked_scores": [
+            12.605135650881824,
+            11.095364655243026,
+            7.702054161352647,
+            6.344457409718026,
+            5.9705697939017455
+          ],
+          "positive_score_ids": [
+            "R09-3",
+            "R00-3",
+            "R17-3",
+            "R03-0",
+            "R03-1"
+          ],
+          "false_positive_ids": [
+            "R09-3",
+            "R00-3",
+            "R17-3"
+          ],
+          "missed_relevant_ids": [
+            "R03-2",
+            "R03-4"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R03-4",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 15.020100000128878,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R09-4",
+            "R00-4",
+            "R17-4",
+            "R03-3",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            18.251294340746774,
+            16.90364479309655,
+            13.874713011165447,
+            6.214361732240279,
+            5.517525477112771
+          ],
+          "positive_score_ids": [
+            "R09-4",
+            "R00-4",
+            "R17-4",
+            "R03-3",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R09-4",
+            "R00-4",
+            "R17-4"
+          ],
+          "missed_relevant_ids": [
+            "R03-1",
+            "R03-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R09-0",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 16.45039999993969,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-0",
+            "R00-0",
+            "R17-0",
+            "R09-1",
+            "R09-3"
+          ],
+          "ranked_scores": [
+            16.87531160653606,
+            14.672567590618817,
+            13.04686876799609,
+            10.762739610289415,
+            9.635108893737842
+          ],
+          "positive_score_ids": [
+            "R03-0",
+            "R00-0",
+            "R17-0",
+            "R09-1",
+            "R09-3"
+          ],
+          "false_positive_ids": [
+            "R03-0",
+            "R00-0",
+            "R17-0"
+          ],
+          "missed_relevant_ids": [
+            "R09-2",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R09-1",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 16.768400000273687,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-1",
+            "R17-1",
+            "R09-0",
+            "R09-3",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            21.84449131871246,
+            18.24166389103459,
+            11.08125418758202,
+            9.635108893737842,
+            8.878510171664779
+          ],
+          "positive_score_ids": [
+            "R03-1",
+            "R17-1",
+            "R09-0",
+            "R09-3",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-1",
+            "R17-1",
+            "R03-0"
+          ],
+          "missed_relevant_ids": [
+            "R09-2",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.36331756126716835
+        },
+        {
+          "query_id": "R09-2",
+          "family_id": "F09",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 17.045499999767344,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-2",
+            "R00-2",
+            "R17-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            23.26467346314694,
+            19.961718338811735,
+            17.13722651959853,
+            1.0590505912852184,
+            1.0590505912852184
+          ],
+          "positive_score_ids": [
+            "R03-2",
+            "R00-2",
+            "R17-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R03-2",
+            "R00-2",
+            "R17-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-3",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 14.920900000106485,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-3",
+            "R00-3",
+            "R17-3",
+            "R09-0",
+            "R09-1"
+          ],
+          "ranked_scores": [
+            12.605135650881824,
+            9.784084412531923,
+            7.702054161352647,
+            7.523322572051633,
+            7.079962808114592
+          ],
+          "positive_score_ids": [
+            "R03-3",
+            "R00-3",
+            "R17-3",
+            "R09-0",
+            "R09-1"
+          ],
+          "false_positive_ids": [
+            "R03-3",
+            "R00-3",
+            "R17-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-2",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R09-4",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 14.620899999954418,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-4",
+            "R00-4",
+            "R17-4",
+            "R09-3",
+            "R09-0"
+          ],
+          "ranked_scores": [
+            18.251294340746774,
+            15.733171767030372,
+            13.874713011165447,
+            7.724132727879078,
+            6.696390639446378
+          ],
+          "positive_score_ids": [
+            "R03-4",
+            "R00-4",
+            "R17-4",
+            "R09-3",
+            "R09-0"
+          ],
+          "false_positive_ids": [
+            "R03-4",
+            "R00-4",
+            "R17-4"
+          ],
+          "missed_relevant_ids": [
+            "R09-1",
+            "R09-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R17-0",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 16.007100000024366,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R03-0",
+            "R09-0",
+            "R17-1",
+            "R17-3"
+          ],
+          "ranked_scores": [
+            13.04686876799609,
+            13.04686876799609,
+            13.04686876799609,
+            8.901652139336711,
+            7.102358238204985
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R03-0",
+            "R09-0",
+            "R17-1",
+            "R17-3"
+          ],
+          "false_positive_ids": [
+            "R00-0",
+            "R03-0",
+            "R09-0"
+          ],
+          "missed_relevant_ids": [
+            "R17-2",
+            "R17-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R17-1",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 16.10610000034285,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R03-1",
+            "R09-1",
+            "R17-0",
+            "R17-3",
+            "R17-4"
+          ],
+          "ranked_scores": [
+            18.24166389103459,
+            18.24166389103459,
+            9.10362213523094,
+            7.102358238204985,
+            5.394368311623738
+          ],
+          "positive_score_ids": [
+            "R03-1",
+            "R09-1",
+            "R17-0",
+            "R17-3",
+            "R17-4"
+          ],
+          "false_positive_ids": [
+            "R03-1",
+            "R09-1"
+          ],
+          "missed_relevant_ids": [
+            "R17-2"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.6,
+          "recall": 0.75,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5143371794949736
+        },
+        {
+          "query_id": "R17-2",
+          "family_id": "F17",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 16.827500000090367,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-2",
+            "R03-2",
+            "R09-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            17.13722651959853,
+            17.13722651959853,
+            17.13722651959853,
+            1.0590505912852184,
+            1.0590505912852184
+          ],
+          "positive_score_ids": [
+            "R00-2",
+            "R03-2",
+            "R09-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-2",
+            "R03-2",
+            "R09-2",
+            "R00-3",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-3",
+            "R17-4"
+          ],
+          "candidate_languages": [
+            "bn",
+            "bn",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R17-3",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 14.561199999661767,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-3",
+            "R03-3",
+            "R09-3",
+            "R17-0",
+            "R17-1"
+          ],
+          "ranked_scores": [
+            7.702054161352647,
+            7.702054161352647,
+            7.702054161352647,
+            5.545690519700553,
+            5.2188753371618875
+          ],
+          "positive_score_ids": [
+            "R00-3",
+            "R03-3",
+            "R09-3",
+            "R17-0",
+            "R17-1"
+          ],
+          "false_positive_ids": [
+            "R00-3",
+            "R03-3",
+            "R09-3"
+          ],
+          "missed_relevant_ids": [
+            "R17-2",
+            "R17-4"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        },
+        {
+          "query_id": "R17-4",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 14.227300000129617,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-4",
+            "R03-4",
+            "R09-4",
+            "R17-3",
+            "R17-0"
+          ],
+          "ranked_scores": [
+            13.874713011165447,
+            13.874713011165447,
+            13.874713011165447,
+            5.191382072346222,
+            4.718758587095299
+          ],
+          "positive_score_ids": [
+            "R00-4",
+            "R03-4",
+            "R09-4",
+            "R17-3",
+            "R17-0"
+          ],
+          "false_positive_ids": [
+            "R00-4",
+            "R03-4",
+            "R09-4"
+          ],
+          "missed_relevant_ids": [
+            "R17-1",
+            "R17-2"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 0.5,
+          "mrr": 0.25,
+          "ndcg": 0.3191471544989227
+        }
+      ]
+    },
+    "entity": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 20,
+        "precision": 0.6000000000000001,
+        "recall": 0.75,
+        "mrr": 0.625,
+        "ndcg": 0.6901598920589259,
+        "latency_ms": 11.301284999990457,
+        "latency_p95_ms": 12.057200000072044,
+        "no_match_query_count": 0,
+        "no_match_false_positive_query_rate": null,
+        "mean_unrelated_results_at_k": 2
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.2,
+            0.8
+          ],
+          "recall": [
+            0.25,
+            1.0
+          ],
+          "mrr": [
+            0.25,
+            1.0
+          ],
+          "ndcg": [
+            0.25,
+            1.0
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.625,
+          "ndcg": 0.6901598920589259,
+          "latency_ms": 12.052899999957845,
+          "latency_p95_ms": 12.290499999835447,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "en": {
+          "query_count": 8,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.625,
+          "ndcg": 0.6901598920589259,
+          "latency_ms": 11.100312499991105,
+          "latency_p95_ms": 11.587500000132422,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "mixed": {
+          "query_count": 8,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.625,
+          "ndcg": 0.6901598920589259,
+          "latency_ms": 11.126450000006116,
+          "latency_p95_ms": 11.361800000031508,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        }
+      },
+      "by_variant": {
+        "incomplete": {
+          "query_count": 1,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 9.914499999922555,
+          "latency_p95_ms": 9.914499999922555,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.625,
+          "ndcg": 0.6901598920589259,
+          "latency_ms": 11.15237499993782,
+          "latency_p95_ms": 11.361800000031508,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "original": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.625,
+          "ndcg": 0.6901598920589259,
+          "latency_ms": 11.223074999975324,
+          "latency_p95_ms": 11.368599999968865,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "paraphrase": {
+          "query_count": 3,
+          "precision": 0.5333333333333333,
+          "recall": 0.6666666666666666,
+          "mrr": 0.5,
+          "ndcg": 0.5868798560785679,
+          "latency_ms": 11.331900000034997,
+          "latency_p95_ms": 11.587500000132422,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2.3333333333333335
+        },
+        "translation": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.625,
+          "ndcg": 0.6901598920589259,
+          "latency_ms": 12.052899999957845,
+          "latency_p95_ms": 12.290499999835447,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "transliteration": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.625,
+          "ndcg": 0.6901598920589259,
+          "latency_ms": 11.100525000074413,
+          "latency_p95_ms": 11.32820000020729,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        }
+      },
+      "by_family": {
+        "F00": {
+          "query_count": 5,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 11.066879999998491,
+          "latency_p95_ms": 12.057200000072044,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        },
+        "F03": {
+          "query_count": 5,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036,
+          "latency_ms": 11.261079999985668,
+          "latency_p95_ms": 11.862199999995937,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        },
+        "F09": {
+          "query_count": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0,
+          "latency_ms": 11.289859999942564,
+          "latency_p95_ms": 12.00169999992795,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 5
+        },
+        "F17": {
+          "query_count": 5,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 11.587320000035106,
+          "latency_p95_ms": 12.290499999835447,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 0.75,
+        "en→en": 0.75,
+        "en→mixed": 0.75,
+        "bn→bn": null,
+        "bn→en": 0.75,
+        "bn→mixed": 0.75,
+        "mixed→bn": 0.75,
+        "mixed→en": 0.75,
+        "mixed→mixed": 0.75
+      },
+      "queries": [
+        {
+          "query_id": "R00-0",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.212699999759934,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.6666666666666666
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-1",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "incomplete",
+          "latency_ms": 9.914499999922555,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-2",
+          "family_id": "F00",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 12.057200000072044,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.6666666666666666
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-3",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.126899999908346,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.6666666666666666
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-4",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.023100000329578,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.6666666666666666
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R03-0",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.172900000019581,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-1",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-1",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-1",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 11.219600000003993,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-2",
+          "family_id": "F03",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 11.862199999995937,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-3",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-3",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-3",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.042799999813724,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-4",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.007900000095105,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R09-0",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.138100000152917,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-1",
+            "R09-2",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-1",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 11.188599999968574,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-2",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-2",
+          "family_id": "F09",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 12.00169999992795,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-3",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.0779999999977,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-2",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-4",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.042899999665678,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-2",
+            "R09-3"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R17-0",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.368599999968865,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R17-1",
+            "R17-2",
+            "R17-3",
+            "R17-4",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.3333333333333333
+          ],
+          "positive_score_ids": [
+            "R17-1",
+            "R17-2",
+            "R17-3",
+            "R17-4",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R00-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R17-1",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 11.587500000132422,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R17-0",
+            "R17-2",
+            "R17-3",
+            "R17-4",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.3333333333333333
+          ],
+          "positive_score_ids": [
+            "R17-0",
+            "R17-2",
+            "R17-3",
+            "R17-4",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R00-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R17-2",
+          "family_id": "F17",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 12.290499999835447,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-3",
+            "R17-4",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.3333333333333333
+          ],
+          "positive_score_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-3",
+            "R17-4",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R00-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R17-3",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.361800000031508,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-4",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.3333333333333333
+          ],
+          "positive_score_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-4",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R00-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R17-4",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.32820000020729,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-3",
+            "R00-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.3333333333333333
+          ],
+          "positive_score_ids": [
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-3",
+            "R00-0"
+          ],
+          "false_positive_ids": [
+            "R00-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        }
+      ]
+    },
+    "structured": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 20,
+        "precision": 0.6000000000000001,
+        "recall": 0.75,
+        "mrr": 0.5,
+        "ndcg": 0.6303197841178518,
+        "latency_ms": 11.303490000000238,
+        "latency_p95_ms": 12.003700000150275,
+        "no_match_query_count": 0,
+        "no_match_false_positive_query_rate": null,
+        "mean_unrelated_results_at_k": 2
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.2,
+            0.8
+          ],
+          "recall": [
+            0.25,
+            1.0
+          ],
+          "mrr": [
+            0.125,
+            0.875
+          ],
+          "ndcg": [
+            0.1901598920589259,
+            0.9401598920589259
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.6303197841178518,
+          "latency_ms": 12.01647499988212,
+          "latency_p95_ms": 12.117899999793735,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "en": {
+          "query_count": 8,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.6303197841178518,
+          "latency_ms": 11.125599999957103,
+          "latency_p95_ms": 11.546499999894877,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "mixed": {
+          "query_count": 8,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.6303197841178518,
+          "latency_ms": 11.124887500102432,
+          "latency_p95_ms": 11.253200000282959,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        }
+      },
+      "by_variant": {
+        "incomplete": {
+          "query_count": 1,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 9.852000000137195,
+          "latency_p95_ms": 9.852000000137195,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.6303197841178518,
+          "latency_ms": 11.134850000075858,
+          "latency_p95_ms": 11.253200000282959,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "original": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.6303197841178518,
+          "latency_ms": 11.268599999993967,
+          "latency_p95_ms": 11.507799999890267,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "paraphrase": {
+          "query_count": 3,
+          "precision": 0.5333333333333333,
+          "recall": 0.6666666666666666,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5070930454904691,
+          "latency_ms": 11.359466666514587,
+          "latency_p95_ms": 11.546499999894877,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2.3333333333333335
+        },
+        "translation": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.6303197841178518,
+          "latency_ms": 12.01647499988212,
+          "latency_p95_ms": 12.117899999793735,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        },
+        "transliteration": {
+          "query_count": 4,
+          "precision": 0.6000000000000001,
+          "recall": 0.75,
+          "mrr": 0.5,
+          "ndcg": 0.6303197841178518,
+          "latency_ms": 11.114925000129006,
+          "latency_p95_ms": 11.225199999898905,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 2
+        }
+      },
+      "by_family": {
+        "F00": {
+          "query_count": 5,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 11.075819999950909,
+          "latency_p95_ms": 11.970199999723263,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        },
+        "F03": {
+          "query_count": 5,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036,
+          "latency_ms": 11.306060000060825,
+          "latency_p95_ms": 11.97409999986121,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        },
+        "F09": {
+          "query_count": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0,
+          "latency_ms": 11.30196000003707,
+          "latency_p95_ms": 12.003700000150275,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 5
+        },
+        "F17": {
+          "query_count": 5,
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036,
+          "latency_ms": 11.530119999952149,
+          "latency_p95_ms": 12.117899999793735,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 1
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 0.75,
+        "en→en": 0.75,
+        "en→mixed": 0.75,
+        "bn→bn": null,
+        "bn→en": 0.75,
+        "bn→mixed": 0.75,
+        "mixed→bn": 0.75,
+        "mixed→en": 0.75,
+        "mixed→mixed": 0.75
+      },
+      "queries": [
+        {
+          "query_id": "R00-0",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.3311000000067,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.5
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-1",
+          "family_id": "F00",
+          "language": "en",
+          "variant": "incomplete",
+          "latency_ms": 9.852000000137195,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-2",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-2",
+          "family_id": "F00",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 11.970199999723263,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.5
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-3",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-3",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.106999999810796,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-4",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.5
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-4",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R00-4",
+          "family_id": "F00",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.11880000007659,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R03-0"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            0.5
+          ],
+          "positive_score_ids": [
+            "R00-0",
+            "R00-1",
+            "R00-2",
+            "R00-3",
+            "R03-0"
+          ],
+          "false_positive_ids": [
+            "R03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "R03-0",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.06549999985873,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-1",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-1",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-1",
+          "family_id": "F03",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 11.327199999868753,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-2",
+            "R03-3",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-2",
+          "family_id": "F03",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 11.97409999986121,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-3",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-3",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-3",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.108200000307988,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R03-4",
+          "family_id": "F03",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.055300000407442,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R09-0",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.17000000022017,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-1",
+            "R09-2",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-1",
+          "family_id": "F09",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 11.204699999780132,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-2",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-2",
+          "family_id": "F09",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 12.003700000150275,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-3",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-3",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.070999999901687,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-2",
+            "R09-4"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R09-4",
+          "family_id": "F09",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.060400000133086,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "false_positive_ids": [
+            "R00-1",
+            "R03-0",
+            "R03-1",
+            "R03-2",
+            "R03-3"
+          ],
+          "missed_relevant_ids": [
+            "R09-0",
+            "R09-1",
+            "R09-2",
+            "R09-3"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "R17-0",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "original",
+          "latency_ms": 11.507799999890267,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R17-1",
+            "R17-2",
+            "R17-3",
+            "R17-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R17-1",
+            "R17-2",
+            "R17-3",
+            "R17-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R17-1",
+          "family_id": "F17",
+          "language": "en",
+          "variant": "paraphrase",
+          "latency_ms": 11.546499999894877,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-2",
+            "R17-3",
+            "R17-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-2",
+            "R17-3",
+            "R17-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R17-2",
+          "family_id": "F17",
+          "language": "bn",
+          "variant": "translation",
+          "latency_ms": 12.117899999793735,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-1",
+            "R17-3",
+            "R17-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-1",
+            "R17-3",
+            "R17-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R17-3",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "mixed",
+          "latency_ms": 11.253200000282959,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-4"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-4"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        },
+        {
+          "query_id": "R17-4",
+          "family_id": "F17",
+          "language": "mixed",
+          "variant": "transliteration",
+          "latency_ms": 11.225199999898905,
+          "relevant_count": 4,
+          "ranked_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-3"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "positive_score_ids": [
+            "R00-1",
+            "R17-0",
+            "R17-1",
+            "R17-2",
+            "R17-3"
+          ],
+          "false_positive_ids": [
+            "R00-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.8,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.7606395682357036
+        }
+      ]
+    }
+  },
+  "model": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "license": "MIT",
+    "dimensions": 384,
+    "max_length": 512,
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: ",
+    "batch_size": 16,
+    "local_directory": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\models\\multilingual-e5-small",
+    "device": "auto",
+    "loaded": false
+  },
+  "development_recommendation": "entity",
+  "selection_note": "Highest observed dev nDCG only; small synthetic sample, no significance or generalization claim.",
+  "ranking_fingerprint": "0bc702c2bca5ddbbac639821b766c242163b2ae7f922741213a94de78dd97600",
+  "json_path": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\results\\experiments\\20261104T133053-7e97f168.json",
+  "csv_path": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\results\\experiments\\20261104T133053-7e97f168.csv"
+}

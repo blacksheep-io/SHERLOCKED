@@ -1,0 +1,5044 @@
+{
+  "schema_version": 1,
+  "experiment_id": "20261104T133913-9a40269a",
+  "created_at_utc": "2026-11-04T13:39:13.793252+00:00",
+  "dataset_path": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\data\\challenge_reports.jsonl",
+  "dataset_sha256": "59d612bdd939d96f3971842346361c09634f4ce63cc71906e98b6ff48e58b65e",
+  "code_sha256": "0130e5a505c5ebe88d71995adb95ee420bc9d1d584fa59a0bef5200752d0130c",
+  "split": "test",
+  "fit_split": "train",
+  "k": 5,
+  "seed": 20261104,
+  "configuration": {
+    "freeze_version": "2026-11-04-final-v1",
+    "protocol": "Source-only extraction; train-fitted lexical indexes; held-out within-split leave-one-report-out",
+    "device": "cuda",
+    "source_only": true,
+    "explain_passages": false,
+    "allow_download": false,
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "rrf_k": 60,
+    "weights": {
+      "tfidf": 0.2,
+      "bm25": 0.2,
+      "semantic": 0.4,
+      "entity": 0.1,
+      "structured": 0.1
+    },
+    "model_id": "intfloat/multilingual-e5-small",
+    "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "preferred_fusion_from_original_dev": "hybrid_rerank",
+    "selection_note": "Default weights were not optimized. Among fusion methods, deterministic contradiction reranking gave the highest original-fixture dev nDCG; the winning method differs by synthetic dataset."
+  },
+  "protocol": "Within held-out partition leave-one-report-out; fixed K; zero scores tie by ID.",
+  "label_definition": "Relevant iff same non-null synthetic scenario family; query self excluded.",
+  "platform": "Windows-10-10.0.19044-SP0",
+  "python": "3.12.14",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.7.2",
+    "streamlit": "1.51.0",
+    "plotly": "6.4.0",
+    "torch": "2.6.0+cu124",
+    "sentence-transformers": "3.4.1"
+  },
+  "methods": {
+    "tfidf": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.22,
+        "recall": 0.6111111111111112,
+        "mrr": 0.5083333333333333,
+        "ndcg": 0.48351230454184907,
+        "latency_ms": 9.266619999925751,
+        "latency_p95_ms": 11.87290000007124,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 1.0,
+        "mean_unrelated_results_at_k": 3.9
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.1,
+            0.30000000000000004
+          ],
+          "recall": [
+            0.3333333333333333,
+            0.8333333333333334
+          ],
+          "mrr": [
+            0.2916666666666667,
+            0.625
+          ],
+          "ndcg": [
+            0.40876479517697223,
+            0.5413501733346127
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.26666666666666666,
+          "recall": 0.6666666666666666,
+          "mrr": 0.25,
+          "ndcg": 0.3982307463197193,
+          "latency_ms": 9.04303333330366,
+          "latency_p95_ms": 9.420300000329007,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.6666666666666665
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 0.6111111111111112,
+          "ndcg": 0.4355245321275764,
+          "latency_ms": 9.925400000004933,
+          "latency_p95_ms": 11.87290000007124,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.2,
+          "recall": 0.6666666666666666,
+          "mrr": 0.625,
+          "ndcg": 0.6167816351782516,
+          "latency_ms": 8.940224999832935,
+          "latency_p95_ms": 9.885899999972025,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 4
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.24444444444444446,
+          "recall": 0.6111111111111112,
+          "mrr": 0.5648148148148148,
+          "ndcg": 0.48351230454184907,
+          "latency_ms": 9.19781111103172,
+          "latency_p95_ms": 11.87290000007124,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.7777777777777777
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 9.885899999972025,
+          "latency_p95_ms": 9.885899999972025,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.33333333333333337,
+          "recall": 0.8333333333333334,
+          "mrr": 0.4444444444444444,
+          "ndcg": 0.5413501733346127,
+          "latency_ms": 9.664966666605324,
+          "latency_p95_ms": 11.87290000007124,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.3333333333333335
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.26666666666666666,
+          "recall": 0.6666666666666666,
+          "mrr": 0.5833333333333334,
+          "ndcg": 0.5004219451139623,
+          "latency_ms": 9.024733333262702,
+          "latency_p95_ms": 9.420300000329007,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.6666666666666665
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.13333333333333333,
+          "recall": 0.3333333333333333,
+          "mrr": 0.6666666666666666,
+          "ndcg": 0.40876479517697223,
+          "latency_ms": 8.903733333227137,
+          "latency_p95_ms": 9.072599999853992,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4.333333333333333
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 9.885899999972025,
+          "latency_p95_ms": 9.885899999972025,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 0.0,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 0.6666666666666666,
+        "bn→mixed": 0.6666666666666666,
+        "mixed→bn": 0.3333333333333333,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 11.87290000007124,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X11-0",
+            "X03-2",
+            "X10-2",
+            "XN02"
+          ],
+          "ranked_scores": [
+            0.3692894403613695,
+            0.31416086349757966,
+            0.14662096425247192,
+            0.07489228007161057,
+            0.07009639058802221
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X11-0",
+            "X03-2",
+            "X10-2",
+            "XN02"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X11-0",
+            "X10-2",
+            "XN02"
+          ],
+          "missed_relevant_ids": [
+            "X03-1"
+          ],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.3065735963827292
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.636199999727978,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "X10-0",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            0.2715271405876181,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-1"
+          ],
+          "false_positive_ids": [
+            "X10-1",
+            "X10-0",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.485800000016752,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X03-0",
+            "X10-2",
+            "XN02",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.2033621216371607,
+            0.14662096425247192,
+            0.09624926104965542,
+            0.09008573099782873,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X03-0",
+            "X10-2",
+            "XN02"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-2",
+            "XN02"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6240505200038379
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 9.002899999813962,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X10-2",
+            "X11-0",
+            "X03-2",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.3692894403613695,
+            0.34671205090824037,
+            0.29892179377070893,
+            0.2033621216371607,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X10-2",
+            "X11-0",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X11-0",
+            "X03-2",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [
+            "X10-1"
+          ],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "en",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 0.5,
+          "ndcg": 0.38685280723454163
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 9.420300000329007,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-1",
+            "X03-0",
+            "X03-2",
+            "X10-0",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            0.2715271405876181,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X03-1",
+            "X03-0",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.5012658353418871
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.650999999645137,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "ranked_scores": [
+            0.34671205090824037,
+            0.3245040460373007,
+            0.1356475387179049,
+            0.09624926104965542,
+            0.07489228007161057
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "missed_relevant_ids": [
+            "X10-1"
+          ],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.900400000129594,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-2",
+            "X03-0",
+            "X10-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            0.37518847107551295,
+            0.31416086349757966,
+            0.29892179377070893,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-2",
+            "X03-0",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X10-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [
+            "X11-1"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 9.072599999853992,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "ranked_scores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "missed_relevant_ids": [
+            "X11-0",
+            "X11-2"
+          ],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.738199999697827,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X10-2",
+            "XN02",
+            "X03-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.37518847107551295,
+            0.3245040460373007,
+            0.1320827164053585,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X10-2",
+            "XN02"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "XN02",
+            "X03-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [
+            "X11-1"
+          ],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 9.885899999972025,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.1356475387179049,
+            0.1320827164053585,
+            0.09008573099782873,
+            0.07009639058802221,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    },
+    "bm25": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.22,
+        "recall": 0.6111111111111112,
+        "mrr": 0.625,
+        "ndcg": 0.5427198580878098,
+        "latency_ms": 8.160549999956856,
+        "latency_p95_ms": 9.015899999667454,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 1.0,
+        "mean_unrelated_results_at_k": 3.9
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.1,
+            0.30000000000000004
+          ],
+          "recall": [
+            0.3333333333333333,
+            0.8333333333333334
+          ],
+          "mrr": [
+            0.3333333333333333,
+            0.7291666666666666
+          ],
+          "ndcg": [
+            0.40876479517697223,
+            0.6435413721288556
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.26666666666666666,
+          "recall": 0.6666666666666666,
+          "mrr": 0.25,
+          "ndcg": 0.3982307463197193,
+          "latency_ms": 8.19216666665549,
+          "latency_p95_ms": 8.658100000047853,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.6666666666666665
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584,
+          "latency_ms": 8.184133333240121,
+          "latency_p95_ms": 8.303199999772914,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.2,
+          "recall": 0.6666666666666666,
+          "mrr": 0.625,
+          "ndcg": 0.6167816351782516,
+          "latency_ms": 8.119149999970432,
+          "latency_p95_ms": 9.015899999667454,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 4
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.24444444444444446,
+          "recall": 0.6111111111111112,
+          "mrr": 0.6944444444444444,
+          "ndcg": 0.5427198580878098,
+          "latency_ms": 8.065511111100124,
+          "latency_p95_ms": 8.658100000047853,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.7777777777777777
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 9.015899999667454,
+          "latency_p95_ms": 9.015899999667454,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.33333333333333337,
+          "recall": 0.8333333333333334,
+          "mrr": 0.6666666666666666,
+          "ndcg": 0.6435413721288556,
+          "latency_ms": 7.761100000000927,
+          "latency_p95_ms": 8.016600000246399,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.3333333333333335
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.26666666666666666,
+          "recall": 0.6666666666666666,
+          "mrr": 0.75,
+          "ndcg": 0.5758534069576012,
+          "latency_ms": 8.287666666698593,
+          "latency_p95_ms": 8.658100000047853,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.6666666666666665
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.13333333333333333,
+          "recall": 0.3333333333333333,
+          "mrr": 0.6666666666666666,
+          "ndcg": 0.40876479517697223,
+          "latency_ms": 8.14776666660085,
+          "latency_p95_ms": 8.273299999927985,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 4.333333333333333
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 9.015899999667454,
+          "latency_p95_ms": 9.015899999667454,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 0.0,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 0.6666666666666666,
+        "bn→mixed": 0.6666666666666666,
+        "mixed→bn": 0.3333333333333333,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.016600000246399,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-2",
+            "X10-0",
+            "XN02",
+            "X10-2",
+            "X11-0"
+          ],
+          "ranked_scores": [
+            3.0441017258920353,
+            2.700735171705492,
+            1.649801532561742,
+            1.5623779000646678,
+            1.5231807375050013
+          ],
+          "positive_score_ids": [
+            "X03-2",
+            "X10-0",
+            "XN02",
+            "X10-2",
+            "X11-0"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "XN02",
+            "X10-2",
+            "X11-0"
+          ],
+          "missed_relevant_ids": [
+            "X03-1"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "en",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.645099999990634,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "X10-0",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            2.0684262539369764,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-1"
+          ],
+          "false_positive_ids": [
+            "X10-1",
+            "X10-0",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.621599999765749,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X03-0",
+            "XN02",
+            "X10-2",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            3.3799354489749085,
+            2.7592247823279155,
+            1.649801532561742,
+            1.5623779000646678,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X03-0",
+            "XN02",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "XN02",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6240505200038379
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.303199999772914,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-2",
+            "X03-2",
+            "X03-0",
+            "X11-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            7.391626401172241,
+            4.165100831008477,
+            2.9437562341361847,
+            1.5231807375050013,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X03-2",
+            "X03-0",
+            "X11-0"
+          ],
+          "false_positive_ids": [
+            "X03-2",
+            "X03-0",
+            "X11-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [
+            "X10-1"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "en",
+            "en",
+            "bn"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.658100000047853,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-1",
+            "X03-0",
+            "X03-2",
+            "X10-0",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            2.237310969561625,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X03-1",
+            "X03-0",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.5012658353418871
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.901700000275014,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "ranked_scores": [
+            5.843404800730726,
+            4.6449721689478345,
+            2.2999058936118604,
+            1.5220508629460177,
+            1.3796123911639577
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "missed_relevant_ids": [
+            "X10-1"
+          ],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.232599999701051,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-2",
+            "X03-0",
+            "X10-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            7.689031994156039,
+            1.564143842972227,
+            1.465606929787637,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-2",
+            "X03-0",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X10-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [
+            "X11-1"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 8.273299999927985,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "ranked_scores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "missed_relevant_ids": [
+            "X11-0",
+            "X11-2"
+          ],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": 0.0,
+          "mrr": 0.0,
+          "ndcg": 0.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.937400000173511,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X10-2",
+            "XN02",
+            "X03-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            6.829781915080962,
+            4.891111072229544,
+            2.2999058936118604,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X10-2",
+            "XN02"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "XN02",
+            "X03-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [
+            "X11-1"
+          ],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 9.015899999667454,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            2.1780329751713183,
+            2.0684262539369764,
+            1.5220508629460177,
+            1.3796123911639577,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    },
+    "semantic": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.36000000000000004,
+        "recall": 1.0,
+        "mrr": 0.9,
+        "ndcg": 1.0,
+        "latency_ms": 554.250570000022,
+        "latency_p95_ms": 5255.111299999953,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 1.0,
+        "mean_unrelated_results_at_k": 3.2
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.2,
+            0.4
+          ],
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.5,
+            1.0
+          ],
+          "ndcg": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 42.486099999981285,
+          "latency_p95_ms": 71.8338000001495,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 1768.2647333332777,
+          "latency_p95_ms": 5255.111299999953,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.30000000000000004,
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 1.0,
+          "latency_ms": 27.563300000110758,
+          "latency_p95_ms": 31.80079999992813,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 3.5
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 612.8424444444439,
+          "latency_p95_ms": 5255.111299999953,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 26.923700000224926,
+          "latency_p95_ms": 26.923700000224926,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 1786.2486333333436,
+          "latency_p95_ms": 5255.111299999953,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 26.06136666675714,
+          "latency_p95_ms": 28.972300000077666,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 26.21733333323088,
+          "latency_p95_ms": 26.652199999716686,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 26.923700000224926,
+          "latency_p95_ms": 26.923700000224926,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 1.0,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 1.0,
+        "bn→mixed": 1.0,
+        "mixed→bn": 1.0,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 5255.111299999953,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-2",
+            "X03-1",
+            "X10-0",
+            "X10-1",
+            "XN02"
+          ],
+          "ranked_scores": [
+            0.9358676671981812,
+            0.8752862215042114,
+            0.8275201320648193,
+            0.8088743686676025,
+            0.8086584806442261
+          ],
+          "positive_score_ids": [
+            "X03-2",
+            "X03-1",
+            "X10-0",
+            "X10-1",
+            "XN02"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-1",
+            "XN02"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "bn",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 71.8338000001495,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-2",
+            "XN02",
+            "X10-1",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.8955855369567871,
+            0.8809712529182434,
+            0.846317708492279,
+            0.832187294960022,
+            0.8270999193191528
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X03-2",
+            "XN02",
+            "X10-1",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X10-1",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "bn",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 31.80079999992813,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-1",
+            "X10-0",
+            "XN02",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            0.9332614541053772,
+            0.8676630258560181,
+            0.8178404569625854,
+            0.811298668384552,
+            0.8110290765762329
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X03-1",
+            "X10-0",
+            "XN02",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "XN02",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "en",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 23.303699999814853,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-2",
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "X11-0"
+          ],
+          "ranked_scores": [
+            0.9191880226135254,
+            0.8811869025230408,
+            0.824691653251648,
+            0.8145843744277954,
+            0.8045217990875244
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "X11-0"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-2",
+            "X11-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "bn",
+            "en",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 28.972300000077666,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-2",
+            "X03-1",
+            "X11-1",
+            "X03-0"
+          ],
+          "ranked_scores": [
+            0.9043809771537781,
+            0.8824436664581299,
+            0.8413361310958862,
+            0.8381585478782654,
+            0.833532989025116
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-2",
+            "X03-1",
+            "X11-1",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X03-1",
+            "X11-1",
+            "X03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "bn",
+            "bn",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 25.90810000037891,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-1",
+            "X11-2",
+            "X11-1",
+            "XN02"
+          ],
+          "ranked_scores": [
+            0.9197951555252075,
+            0.8686981201171875,
+            0.8323843479156494,
+            0.81446373462677,
+            0.8033396005630493
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-1",
+            "X11-2",
+            "X11-1",
+            "XN02"
+          ],
+          "false_positive_ids": [
+            "X11-2",
+            "X11-1",
+            "XN02"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 26.379200000064884,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-2",
+            "X11-1",
+            "X10-0",
+            "X10-2",
+            "X03-0"
+          ],
+          "ranked_scores": [
+            0.9200245141983032,
+            0.8658558130264282,
+            0.8067745566368103,
+            0.8049306869506836,
+            0.7888695001602173
+          ],
+          "positive_score_ids": [
+            "X11-2",
+            "X11-1",
+            "X10-0",
+            "X10-2",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-2",
+            "X03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "bn",
+            "en",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 26.652199999716686,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-2",
+            "X10-2",
+            "X10-1",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.8802899122238159,
+            0.8781508803367615,
+            0.8259429931640625,
+            0.8174843192100525,
+            0.8172228336334229
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-2",
+            "X10-2",
+            "X10-1",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "X10-1",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "bn",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 25.620599999911065,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-1",
+            "X10-2",
+            "XN02",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.9168620109558105,
+            0.8671038150787354,
+            0.833247721195221,
+            0.7941301465034485,
+            0.7917587757110596
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-1",
+            "X10-2",
+            "XN02",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "XN02",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 26.923700000224926,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X03-1",
+            "X03-2",
+            "X10-2",
+            "X03-0",
+            "X11-2"
+          ],
+          "ranked_scores": [
+            0.8027803301811218,
+            0.8007710576057434,
+            0.7999129891395569,
+            0.7957713603973389,
+            0.7931973934173584
+          ],
+          "positive_score_ids": [
+            "X03-1",
+            "X03-2",
+            "X10-2",
+            "X03-0",
+            "X11-2"
+          ],
+          "false_positive_ids": [
+            "X03-1",
+            "X03-2",
+            "X10-2",
+            "X03-0",
+            "X11-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "mixed",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    },
+    "entity": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.36000000000000004,
+        "recall": 1.0,
+        "mrr": 0.9,
+        "ndcg": 1.0,
+        "latency_ms": 7.1058399999401445,
+        "latency_p95_ms": 8.047399999668414,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 0.0,
+        "mean_unrelated_results_at_k": 3.2
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.2,
+            0.4
+          ],
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.5,
+            1.0
+          ],
+          "ndcg": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.316733333330679,
+          "latency_p95_ms": 7.594700000026933,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.009133333364541,
+          "latency_p95_ms": 7.418400000005931,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.30000000000000004,
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 1.0,
+          "latency_ms": 7.020199999828947,
+          "latency_p95_ms": 8.047399999668414,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 0.0,
+          "mean_unrelated_results_at_k": 3.5
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.001222222192559,
+          "latency_p95_ms": 7.594700000026933,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 8.047399999668414,
+          "latency_p95_ms": 8.047399999668414,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 0.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 6.700866666657627,
+          "latency_p95_ms": 6.952300000193645,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.077233333347976,
+          "latency_p95_ms": 7.594700000026933,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.225566666572074,
+          "latency_p95_ms": 7.418400000005931,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 8.047399999668414,
+          "latency_p95_ms": 8.047399999668414,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 0.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 1.0,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 1.0,
+        "bn→mixed": 1.0,
+        "mixed→bn": 1.0,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.671900000128517,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-1",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.952300000193645,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-2",
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.478399999650719,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-1",
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.937099999959173,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-1",
+            "X10-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-1",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.594700000026933,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.6999000000578235,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-1",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-1"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.418400000005931,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-1",
+            "X11-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-1",
+            "X11-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.403199999771459,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.85509999993883,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-1",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-1"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 8.047399999668414,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "ranked_scores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    },
+    "structured": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.36000000000000004,
+        "recall": 1.0,
+        "mrr": 0.9,
+        "ndcg": 1.0,
+        "latency_ms": 7.623940000121365,
+        "latency_p95_ms": 9.85820000005333,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 0.0,
+        "mean_unrelated_results_at_k": 3.2
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.2,
+            0.4
+          ],
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.5,
+            1.0
+          ],
+          "ndcg": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.609700000102748,
+          "latency_p95_ms": 7.9387999999198655,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.887333333504405,
+          "latency_p95_ms": 9.85820000005333,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.30000000000000004,
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 1.0,
+          "latency_ms": 7.437075000098048,
+          "latency_p95_ms": 8.665800000017043,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 0.0,
+          "mean_unrelated_results_at_k": 3.5
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.508177777910735,
+          "latency_p95_ms": 9.85820000005333,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 8.665800000017043,
+          "latency_p95_ms": 8.665800000017043,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 0.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 6.800666666852824,
+          "latency_p95_ms": 7.033900000351423,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 7.30310000017198,
+          "latency_p95_ms": 7.9387999999198655,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 8.420766666707399,
+          "latency_p95_ms": 9.85820000005333,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 8.665800000017043,
+          "latency_p95_ms": 8.665800000017043,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 0.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 1.0,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 1.0,
+        "bn→mixed": 1.0,
+        "mixed→bn": 1.0,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.786800000099902,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-1",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.033900000351423,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-2",
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.581300000107149,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-1",
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X10-1",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.017000000359985,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-1",
+            "X10-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-1",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.9387999999198655,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 6.95350000023609,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-1",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-1"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 9.85820000005333,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-1",
+            "X11-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-1",
+            "X11-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.856400000036956,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-2",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-2"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 7.547700000031909,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-1",
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            1.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-1"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 8.665800000017043,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "ranked_scores": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "positive_score_ids": [],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-1",
+            "X03-2",
+            "X10-0",
+            "X10-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    },
+    "hybrid": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.36000000000000004,
+        "recall": 1.0,
+        "mrr": 0.8,
+        "ndcg": 0.8956671363398697,
+        "latency_ms": 19.115510000028735,
+        "latency_p95_ms": 26.845200000025216,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 1.0,
+        "mean_unrelated_results_at_k": 3.2
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.2,
+            0.4
+          ],
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.4166666666666667,
+            0.9583333333333334
+          ],
+          "ndcg": [
+            0.8159523447644564,
+            1.0
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.6666666666666666,
+          "ndcg": 0.7956176024115139,
+          "latency_ms": 20.658633333368925,
+          "latency_p95_ms": 26.845200000025216,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9590717717793498,
+          "latency_ms": 18.191433333413443,
+          "latency_p95_ms": 18.812100000104692,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.30000000000000004,
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 0.9323120348287456,
+          "latency_ms": 18.65122499998506,
+          "latency_p95_ms": 20.81899999984671,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 3.5
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.8888888888888888,
+          "ndcg": 0.8956671363398697,
+          "latency_ms": 19.12585555555779,
+          "latency_p95_ms": 26.845200000025216,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 19.022400000267226,
+          "latency_p95_ms": 19.022400000267226,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.8333333333333334,
+          "ndcg": 0.8159523447644564,
+          "latency_ms": 20.618466666595243,
+          "latency_p95_ms": 26.845200000025216,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.8333333333333334,
+          "ndcg": 0.8710490642551528,
+          "latency_ms": 19.241366666695587,
+          "latency_p95_ms": 20.81899999984671,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 17.51773333338254,
+          "latency_p95_ms": 17.873400000098627,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 19.022400000267226,
+          "latency_p95_ms": 19.022400000267226,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 1.0,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 1.0,
+        "bn→mixed": 1.0,
+        "mixed→bn": 1.0,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 18.120100000032835,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-2",
+            "X10-0",
+            "XN02",
+            "X03-1",
+            "X11-0"
+          ],
+          "ranked_scores": [
+            0.8036712597297669,
+            0.582306474421376,
+            0.557344993728281,
+            0.5501144886016847,
+            0.4833007554903326
+          ],
+          "positive_score_ids": [
+            "X03-2",
+            "X10-0",
+            "XN02",
+            "X03-1",
+            "X11-0"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "XN02",
+            "X11-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "en",
+            "mixed",
+            "bn",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 26.845200000025216,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "XN02",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.5871803461015325,
+            0.5582342147827148,
+            0.5523885011672973,
+            0.4231588542461395,
+            0.33083996772766117
+          ],
+          "positive_score_ids": [
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "XN02",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X10-1",
+            "XN02",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 16.89009999972768,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X10-0",
+            "XN02",
+            "X03-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            0.765899631228371,
+            0.5678086071124664,
+            0.5501998380192671,
+            0.5470652103424072,
+            0.43611164490127174
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X10-0",
+            "XN02",
+            "X03-1",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "XN02",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 18.812100000104692,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-2",
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "X11-0"
+          ],
+          "ranked_scores": [
+            0.8370176192270583,
+            0.5524747610092163,
+            0.48338565927397825,
+            0.4792039920063367,
+            0.4228067614092631
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "X11-0"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-2",
+            "X11-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "bn",
+            "en",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 18.093000000135362,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-1",
+            "X10-0",
+            "X10-2",
+            "XN02",
+            "X11-1"
+          ],
+          "ranked_scores": [
+            0.5908398805558781,
+            0.5617523908615112,
+            0.552977466583252,
+            0.40165552496910095,
+            0.3352634191513062
+          ],
+          "positive_score_ids": [
+            "X03-1",
+            "X10-0",
+            "X10-2",
+            "XN02",
+            "X11-1"
+          ],
+          "false_positive_ids": [
+            "X03-1",
+            "XN02",
+            "X11-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 20.81899999984671,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X11-2",
+            "X10-1",
+            "XN02",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            0.8372604723917312,
+            0.5568362491919475,
+            0.5474792480468751,
+            0.5339791934360365,
+            0.3912117870027105
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X11-2",
+            "X10-1",
+            "XN02",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "X11-2",
+            "XN02",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "bn",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 17.6421000001028,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-2",
+            "X11-1",
+            "X10-0",
+            "X03-0",
+            "XN02"
+          ],
+          "ranked_scores": [
+            0.843047499894424,
+            0.5463423252105712,
+            0.420616195490783,
+            0.4190650380399871,
+            0.3847663998603821
+          ],
+          "positive_score_ids": [
+            "X11-2",
+            "X11-1",
+            "X10-0",
+            "X03-0",
+            "XN02"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X03-0",
+            "XN02"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "bn",
+            "en",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 17.0376999999462,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-2",
+            "XN02",
+            "X10-2",
+            "X10-1"
+          ],
+          "ranked_scores": [
+            0.5521159648895264,
+            0.5512603521347046,
+            0.3968674540519715,
+            0.33037719726562503,
+            0.326993727684021
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-2",
+            "XN02",
+            "X10-2",
+            "X10-1"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X10-2",
+            "X10-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 17.873400000098627,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-1",
+            "X10-2",
+            "XN02",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.8417824985974269,
+            0.5468415260314942,
+            0.5414288069843769,
+            0.5142724043650921,
+            0.31670351028442384
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-1",
+            "X10-2",
+            "XN02",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "XN02",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 19.022400000267226,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.6838683792492547,
+            0.6670384458512196,
+            0.5976117158302453,
+            0.5737650928123184,
+            0.4013901650905609
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    },
+    "rrf": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.32,
+        "recall": 0.8888888888888888,
+        "mrr": 0.8,
+        "ndcg": 0.7853630705012296,
+        "latency_ms": 13.168829999995069,
+        "latency_p95_ms": 13.903399999890098,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 1.0,
+        "mean_unrelated_results_at_k": 3.4
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.16666666666666669,
+            0.38333333333333336
+          ],
+          "recall": [
+            0.8333333333333334,
+            1.0
+          ],
+          "mrr": [
+            0.4166666666666667,
+            0.9583333333333334
+          ],
+          "ndcg": [
+            0.7189728339724946,
+            0.9181435435586995
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.6666666666666666,
+          "ndcg": 0.7956176024115139,
+          "latency_ms": 13.034699999934674,
+          "latency_p95_ms": 13.407399999778136,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.33333333333333337,
+          "recall": 0.8333333333333334,
+          "mrr": 1.0,
+          "ndcg": 0.7802358045460874,
+          "latency_ms": 13.371633333463251,
+          "latency_p95_ms": 13.456399999995483,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.3333333333333335
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.25,
+          "recall": 0.8333333333333334,
+          "mrr": 0.75,
+          "ndcg": 0.7802358045460874,
+          "latency_ms": 13.117324999939228,
+          "latency_p95_ms": 13.903399999890098,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 3.75
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.35555555555555557,
+          "recall": 0.8888888888888888,
+          "mrr": 0.8888888888888888,
+          "ndcg": 0.7853630705012296,
+          "latency_ms": 13.087211111117844,
+          "latency_p95_ms": 13.456399999995483,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.2222222222222223
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 13.903399999890098,
+          "latency_p95_ms": 13.903399999890098,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.33333333333333337,
+          "recall": 0.8333333333333334,
+          "mrr": 0.8333333333333334,
+          "ndcg": 0.7189728339724946,
+          "latency_ms": 12.898266666676742,
+          "latency_p95_ms": 13.418700000329409,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.3333333333333335
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.33333333333333337,
+          "recall": 0.8333333333333334,
+          "mrr": 0.8333333333333334,
+          "ndcg": 0.7189728339724946,
+          "latency_ms": 13.314933333276713,
+          "latency_p95_ms": 13.456399999995483,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3.3333333333333335
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9181435435586995,
+          "latency_ms": 13.048433333400075,
+          "latency_p95_ms": 13.23980000006486,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 13.903399999890098,
+          "latency_p95_ms": 13.903399999890098,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 0.6666666666666666,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 1.0,
+        "bn→mixed": 1.0,
+        "mixed→bn": 0.6666666666666666,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.418700000329409,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-2",
+            "X10-0",
+            "XN02",
+            "X11-0",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            0.016236475199986573,
+            0.012853701325409415,
+            0.012405372405372404,
+            0.01236333558914204,
+            0.012220149253731345
+          ],
+          "positive_score_ids": [
+            "X03-2",
+            "X10-0",
+            "XN02",
+            "X11-0",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "XN02",
+            "X11-0",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [
+            "X03-1"
+          ],
+          "candidate_languages": [
+            "mixed",
+            "en",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.675399999807269,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "XN02",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.012807377049180328,
+            0.009836065573770493,
+            0.00967741935483871,
+            0.006349206349206349,
+            0.006153846153846154
+          ],
+          "positive_score_ids": [
+            "X10-1",
+            "X03-0",
+            "X03-2",
+            "XN02",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X10-1",
+            "XN02",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.60069999989355,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X10-0",
+            "XN02",
+            "X10-2",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.016287678476996297,
+            0.012906583398386677,
+            0.012549603174603175,
+            0.012453449328449329,
+            0.00967741935483871
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X10-0",
+            "XN02",
+            "X10-2",
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "XN02",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "en",
+            "mixed",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8503449055347546
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.456399999995483,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-2",
+            "X03-0",
+            "X03-2",
+            "X11-0",
+            "X10-1"
+          ],
+          "ranked_scores": [
+            0.0162876784769963,
+            0.012802498048399686,
+            0.012600806451612904,
+            0.012453449328449329,
+            0.00973030142781597
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X03-0",
+            "X03-2",
+            "X11-0",
+            "X10-1"
+          ],
+          "false_positive_ids": [
+            "X03-0",
+            "X03-2",
+            "X11-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "en",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8503449055347546
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.407399999778136,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-1",
+            "X10-0",
+            "X10-2",
+            "X11-1",
+            "X03-0"
+          ],
+          "ranked_scores": [
+            0.012906583398386677,
+            0.009836065573770493,
+            0.00967741935483871,
+            0.00625,
+            0.006153846153846154
+          ],
+          "positive_score_ids": [
+            "X03-1",
+            "X10-0",
+            "X10-2",
+            "X11-1",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X03-1",
+            "X11-1",
+            "X03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "bn",
+            "en",
+            "mixed",
+            "bn",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6934264036172708
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.08100000005652,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "ranked_scores": [
+            0.01639344262295082,
+            0.012800819252432155,
+            0.012503052503052503,
+            0.012220149253731345,
+            0.011950947603121518
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "X11-2",
+            "XN02",
+            "X03-2",
+            "X03-0"
+          ],
+          "missed_relevant_ids": [
+            "X10-1"
+          ],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.2,
+          "recall": 0.5,
+          "mrr": 1.0,
+          "ndcg": 0.6131471927654584
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.23980000006486,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-2",
+            "X10-0",
+            "X03-0",
+            "X11-1",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            0.01634056054997356,
+            0.012698412698412698,
+            0.01260545905707196,
+            0.00973030142781597,
+            0.00625
+          ],
+          "positive_score_ids": [
+            "X11-2",
+            "X10-0",
+            "X03-0",
+            "X11-1",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "X10-0",
+            "X03-0",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "en",
+            "en",
+            "bn",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.021300000218616,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-2",
+            "X10-2",
+            "X10-1",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.009836065573770493,
+            0.00967741935483871,
+            0.006349206349206349,
+            0.00625,
+            0.006153846153846154
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-2",
+            "X10-2",
+            "X10-1",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "X10-1",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "bn",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.884199999916746,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X10-2",
+            "XN02",
+            "X11-1",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.01639344262295082,
+            0.012800819252432155,
+            0.01259920634920635,
+            0.00967741935483871,
+            0.006153846153846154
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X10-2",
+            "XN02",
+            "X11-1",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "XN02",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "bn",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.8772153153380493
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 13.903399999890098,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X10-2",
+            "X03-2",
+            "X11-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.012906583398386677,
+            0.012800819252432157,
+            0.01260545905707196,
+            0.0125,
+            0.006557377049180328
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X03-2",
+            "X11-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "X03-2",
+            "X11-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    },
+    "hybrid_rerank": {
+      "status": "completed",
+      "weights": null,
+      "aggregate": {
+        "query_count": 10,
+        "precision": 0.36000000000000004,
+        "recall": 1.0,
+        "mrr": 0.9,
+        "ndcg": 0.9821601753662639,
+        "latency_ms": 13.055730000041876,
+        "latency_p95_ms": 13.76090000030672,
+        "no_match_query_count": 1,
+        "no_match_false_positive_query_rate": 1.0,
+        "mean_unrelated_results_at_k": 3.2
+      },
+      "family_bootstrap": {
+        "unit": "scenario family",
+        "seed": 20261104,
+        "resamples": 1000,
+        "family_count": 4,
+        "warning": "Small family counts give unstable confidence intervals.",
+        "intervals_95": {
+          "precision": [
+            0.2,
+            0.4
+          ],
+          "recall": [
+            1.0,
+            1.0
+          ],
+          "mrr": [
+            0.5,
+            1.0
+          ],
+          "ndcg": [
+            0.9464805260987917,
+            1.0
+          ]
+        }
+      },
+      "by_language": {
+        "bn": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 12.919133333374097,
+          "latency_p95_ms": 13.386499999796797,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "en": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9732402630493958,
+          "latency_ms": 13.211800000135554,
+          "latency_p95_ms": 13.421399999970163,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "mixed": {
+          "query_count": 4,
+          "precision": 0.30000000000000004,
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 0.9732402630493958,
+          "latency_ms": 13.041124999972453,
+          "latency_p95_ms": 13.76090000030672,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 3.5
+        }
+      },
+      "by_variant": {
+        "challenge_paraphrase": {
+          "query_count": 9,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9821601753662639,
+          "latency_ms": 12.977377777790227,
+          "latency_p95_ms": 13.421399999970163,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "no_match": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 13.76090000030672,
+          "latency_p95_ms": 13.76090000030672,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "by_family": {
+        "XF03": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9464805260987917,
+          "latency_ms": 12.66593333336156,
+          "latency_p95_ms": 12.938500000018394,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF10": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 13.238533333151281,
+          "latency_p95_ms": 13.421399999970163,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XF11": {
+          "query_count": 3,
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "latency_ms": 13.02766666685784,
+          "latency_p95_ms": 13.275500000418106,
+          "no_match_query_count": 0,
+          "no_match_false_positive_query_rate": null,
+          "mean_unrelated_results_at_k": 3
+        },
+        "XNF02": {
+          "query_count": 1,
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null,
+          "latency_ms": 13.76090000030672,
+          "latency_p95_ms": 13.76090000030672,
+          "no_match_query_count": 1,
+          "no_match_false_positive_query_rate": 1.0,
+          "mean_unrelated_results_at_k": 5
+        }
+      },
+      "recall_by_language_pair": {
+        "en→bn": 1.0,
+        "en→en": null,
+        "en→mixed": 1.0,
+        "bn→bn": null,
+        "bn→en": 1.0,
+        "bn→mixed": 1.0,
+        "mixed→bn": 1.0,
+        "mixed→en": 1.0,
+        "mixed→mixed": null
+      },
+      "queries": [
+        {
+          "query_id": "X03-0",
+          "family_id": "XF03",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.938500000018394,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-2",
+            "XN02",
+            "X03-1",
+            "X10-0",
+            "X11-0"
+          ],
+          "ranked_scores": [
+            0.8036712597297669,
+            0.557344993728281,
+            0.5501144886016847,
+            0.44792805724721224,
+            0.4202615265133327
+          ],
+          "positive_score_ids": [
+            "X03-2",
+            "XN02",
+            "X03-1",
+            "X10-0",
+            "X11-0"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X10-0",
+            "X11-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "bn",
+            "en",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876
+        },
+        {
+          "query_id": "X03-1",
+          "family_id": "XF03",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.440100000276288,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "X03-2",
+            "X10-1",
+            "XN02",
+            "X11-1"
+          ],
+          "ranked_scores": [
+            0.5582342147827148,
+            0.5523885011672973,
+            0.5105916053056805,
+            0.4231588542461395,
+            0.2870267370472784
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "X03-2",
+            "X10-1",
+            "XN02",
+            "X11-1"
+          ],
+          "false_positive_ids": [
+            "X10-1",
+            "XN02",
+            "X11-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "bn",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X03-2",
+          "family_id": "XF03",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.619199999789998,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X03-0",
+            "XN02",
+            "X03-1",
+            "X10-0",
+            "X10-2"
+          ],
+          "ranked_scores": [
+            0.765899631228371,
+            0.5501998380192671,
+            0.5470652103424072,
+            0.4367758516249741,
+            0.3354704960779013
+          ],
+          "positive_score_ids": [
+            "X03-0",
+            "XN02",
+            "X03-1",
+            "X10-0",
+            "X10-2"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X10-0",
+            "X10-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "bn",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 0.9197207891481876
+        },
+        {
+          "query_id": "X10-0",
+          "family_id": "XF10",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.421399999970163,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-2",
+            "X10-1",
+            "XN02",
+            "X03-0",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            0.8370176192270583,
+            0.5524747610092163,
+            0.39653509855270386,
+            0.3718351225184448,
+            0.36861845538948973
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X10-1",
+            "XN02",
+            "X03-0",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X03-0",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "bn",
+            "mixed",
+            "en",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-1",
+          "family_id": "XF10",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.386499999796797,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-2",
+            "X03-1",
+            "XN02",
+            "X11-1"
+          ],
+          "ranked_scores": [
+            0.5617523908615112,
+            0.552977466583252,
+            0.5137738091790245,
+            0.40165552496910095,
+            0.2915334079576576
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-2",
+            "X03-1",
+            "XN02",
+            "X11-1"
+          ],
+          "false_positive_ids": [
+            "X03-1",
+            "XN02",
+            "X11-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "bn",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X10-2",
+          "family_id": "XF10",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.907699999686884,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X10-0",
+            "X10-1",
+            "XN02",
+            "X11-2",
+            "X03-2"
+          ],
+          "ranked_scores": [
+            0.8372604723917312,
+            0.5474792480468751,
+            0.5339791934360365,
+            0.4842054340799544,
+            0.3009321438482388
+          ],
+          "positive_score_ids": [
+            "X10-0",
+            "X10-1",
+            "XN02",
+            "X11-2",
+            "X03-2"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X11-2",
+            "X03-2"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "mixed"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-0",
+          "family_id": "XF11",
+          "language": "en",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 13.275500000418106,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-2",
+            "X11-1",
+            "XN02",
+            "X10-0",
+            "X03-0"
+          ],
+          "ranked_scores": [
+            0.843047499894424,
+            0.5463423252105712,
+            0.3847663998603821,
+            0.3657532134702461,
+            0.36440438090433663
+          ],
+          "positive_score_ids": [
+            "X11-2",
+            "X11-1",
+            "XN02",
+            "X10-0",
+            "X03-0"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X10-0",
+            "X03-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "bn",
+            "mixed",
+            "en",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-1",
+          "family_id": "XF11",
+          "language": "bn",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.930800000049203,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-2",
+            "XN02",
+            "X10-2",
+            "X10-1"
+          ],
+          "ranked_scores": [
+            0.5521159648895264,
+            0.5512603521347046,
+            0.3968674540519715,
+            0.2872845193614131,
+            0.28434237189914874
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-2",
+            "XN02",
+            "X10-2",
+            "X10-1"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X10-2",
+            "X10-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "mixed",
+            "mixed",
+            "mixed",
+            "bn"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "X11-2",
+          "family_id": "XF11",
+          "language": "mixed",
+          "variant": "challenge_paraphrase",
+          "latency_ms": 12.876700000106212,
+          "relevant_count": 2,
+          "ranked_ids": [
+            "X11-0",
+            "X11-1",
+            "XN02",
+            "X10-2",
+            "X10-0"
+          ],
+          "ranked_scores": [
+            0.8417824985974269,
+            0.5468415260314942,
+            0.5142724043650921,
+            0.4708076582472843,
+            0.2753943567690642
+          ],
+          "positive_score_ids": [
+            "X11-0",
+            "X11-1",
+            "XN02",
+            "X10-2",
+            "X10-0"
+          ],
+          "false_positive_ids": [
+            "XN02",
+            "X10-2",
+            "X10-0"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "en",
+            "bn",
+            "mixed",
+            "mixed",
+            "en"
+          ],
+          "precision": 0.4,
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0
+        },
+        {
+          "query_id": "XN02",
+          "family_id": "XNF02",
+          "language": "mixed",
+          "variant": "no_match",
+          "latency_ms": 13.76090000030672,
+          "relevant_count": 0,
+          "ranked_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "ranked_scores": [
+            0.6838683792492547,
+            0.6670384458512196,
+            0.5976117158302453,
+            0.5737650928123184,
+            0.4013901650905609
+          ],
+          "positive_score_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "false_positive_ids": [
+            "X10-2",
+            "X11-2",
+            "X03-2",
+            "X03-0",
+            "X03-1"
+          ],
+          "missed_relevant_ids": [],
+          "candidate_languages": [
+            "mixed",
+            "mixed",
+            "mixed",
+            "en",
+            "bn"
+          ],
+          "precision": 0.0,
+          "recall": null,
+          "mrr": 0.0,
+          "ndcg": null
+        }
+      ]
+    }
+  },
+  "model": {
+    "model_id": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "license": "MIT",
+    "dimensions": 384,
+    "max_length": 512,
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: ",
+    "batch_size": 16,
+    "local_directory": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\models\\multilingual-e5-small",
+    "device": "cuda",
+    "loaded": true
+  },
+  "development_recommendation": null,
+  "selection_note": "Highest observed dev nDCG only; small synthetic sample, no significance or generalization claim.",
+  "ranking_fingerprint": "c9501d34a677f92f87aae3c80600394d36aac965094eaed3bb67ef2155441695",
+  "json_path": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\results\\experiments\\20261104T133913-9a40269a.json",
+  "csv_path": "C:\\Users\\NOYON\\Documents\\ChatGPT\\SHERLOCKED\\results\\experiments\\20261104T133913-9a40269a.csv"
+}

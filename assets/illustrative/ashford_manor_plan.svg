@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360" role="img" aria-labelledby="title desc">
+<title id="title">Ashford Manor: fictional architectural illustration</title><desc id="desc">Original ink-line elevation on ivory paper. An illustrative manor, not a measured scene reconstruction or evidence of movement.</desc>
+<rect width="1100" height="360" fill="#F4EEDD"/>
+<path d="M24 20H1076V340H24Z" fill="none" stroke="#CFC7B2" stroke-width="1"/>
+<g fill="#121211" font-family="Georgia,Times New Roman,serif" font-size="27"><text x="44" y="57">Ashford Manor</text></g>
+<g stroke="#121211" stroke-width="1.6" fill="#FBF8F0">
+<path d="M250 285V120H335V86H440V64H630V86H735V120H820V285Z"/>
+<path d="M235 120L292 73L350 120M320 86L386 35L454 86M425 64L535 12L645 64M720 120L778 73L835 120" fill="none"/>
+<path d="M260 285H810M215 295H855M200 308H870M335 86V285M440 64V285M630 64V285M735 120V285" fill="none"/>
+<rect x="476" y="165" width="118" height="120"/><path d="M476 165Q535 100 594 165M535 146V285" fill="none"/>
+</g>
+<g fill="#E0D6C0" stroke="#6E624E" stroke-width="1.2"><rect x="276" y="147" width="36" height="60"/><rect x="346" y="117" width="36" height="60"/><rect x="406" y="117" width="36" height="60"/><rect x="492" y="88" width="31" height="37"/><rect x="548" y="88" width="31" height="37"/><rect x="630" y="117" width="36" height="60"/><rect x="690" y="117" width="36" height="60"/><rect x="758" y="147" width="36" height="60"/></g>
+<g stroke="#6E624E" stroke-width="1"><path d="M276 177H312M294 147V207M346 147H382M364 117V177M406 147H442M424 117V177M630 147H666M648 117V177M690 147H726M708 117V177M758 177H794M776 147V207"/></g>
+<g stroke="#B08D57" stroke-width="1"><path d="M252 226H440M630 226H820M252 234H440M630 234H820M44 74H214"/></g>
+<text x="44" y="327" fill="#4A463E" font-family="Consolas,monospace" font-size="16" letter-spacing="1">FICTIONAL ARCHITECTURAL STUDY / NOT A MEASURED SCENE</text>
+</svg>

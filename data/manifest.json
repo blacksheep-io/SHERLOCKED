@@ -1,0 +1,26 @@
+{
+  "seed": 20261104,
+  "version": "synthetic-v1",
+  "count": 90,
+  "sha256": "da2eb5029532c7e4bc727491e40a6c09bf63693570d4055b5756feb53cf88a07",
+  "family_splits": {
+    "F00": "dev",
+    "F01": "train",
+    "F02": "train",
+    "F03": "dev",
+    "F04": "train",
+    "F05": "train",
+    "F06": "test",
+    "F07": "test",
+    "F08": "train",
+    "F09": "dev",
+    "F10": "test",
+    "F11": "test",
+    "F12": "train",
+    "F13": "train",
+    "F14": "train",
+    "F15": "train",
+    "F16": "train",
+    "F17": "dev"
+  }
+}

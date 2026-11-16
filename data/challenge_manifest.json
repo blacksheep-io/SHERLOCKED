@@ -1,0 +1,24 @@
+{
+  "seed": 20261104,
+  "version": "challenge-v1",
+  "count": 39,
+  "sha256": "59d612bdd939d96f3971842346361c09634f4ce63cc71906e98b6ff48e58b65e",
+  "family_splits": {
+    "XF00": "train",
+    "XF01": "train",
+    "XF02": "train",
+    "XF03": "test",
+    "XF04": "train",
+    "XF05": "dev",
+    "XF06": "train",
+    "XF07": "train",
+    "XF08": "dev",
+    "XF09": "dev",
+    "XF10": "test",
+    "XF11": "test",
+    "XNF00": "train",
+    "XNF01": "dev",
+    "XNF02": "test"
+  },
+  "source": "original authored fictional scenarios; not independently reviewed"
+}
